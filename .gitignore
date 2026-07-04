@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Unused source hero images (only mh-toha-01 is used)
+/public/images/hero/mh-toha-02.png
+/public/images/hero/mh-toha-03.png
+/public/images/hero/mh-toha-04.png
