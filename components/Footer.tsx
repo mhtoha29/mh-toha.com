@@ -32,9 +32,11 @@ const SOCIALS = [
 export default function Footer() {
   return (
     <footer style={{
-      background: 'var(--bg-darker)',
+      background: 'linear-gradient(180deg, #070C18 0%, #05080F 100%)',
       borderTop: '1px solid rgba(14,165,233,0.08)',
       padding: '0 0 24px',
+      position: 'relative',
+      overflow: 'hidden',
     }}>
       {/* ── GIANT CTA ── */}
       <a
@@ -50,6 +52,15 @@ export default function Footer() {
           overflow: 'hidden',
         }}
       >
+        {/* premium ambient glow behind the giant CTA */}
+        <div aria-hidden style={{
+          position: 'absolute', top: '50%', left: '50%',
+          transform: 'translate(-50%,-50%)',
+          width: 'min(900px, 90%)', height: '320px',
+          background: 'radial-gradient(ellipse, rgba(14,165,233,0.12) 0%, rgba(99,102,241,0.06) 45%, transparent 70%)',
+          filter: 'blur(40px)', pointerEvents: 'none',
+          animation: 'footerGlow 8s ease-in-out infinite',
+        }} />
         <div className="container" style={{ position: 'relative' }}>
           <div style={{
             fontSize: '11px', fontWeight: 700, letterSpacing: '3px',
@@ -84,6 +95,10 @@ export default function Footer() {
           }
           .footer-cta:hover .footer-cta-arrow {
             transform: translateX(18px) rotate(-45deg);
+          }
+          @keyframes footerGlow {
+            0%, 100% { opacity: 0.7; transform: translate(-50%, -50%) scale(1); }
+            50%      { opacity: 1;   transform: translate(-50%, -50%) scale(1.08); }
           }
         `}</style>
       </a>

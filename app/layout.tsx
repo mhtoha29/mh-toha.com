@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { Plus_Jakarta_Sans, JetBrains_Mono } from 'next/font/google';
 import ChatWidget from '@/components/ChatWidget';
-import GrainOverlay from '@/components/fx/GrainOverlay';
 import ScrollProgress from '@/components/fx/ScrollProgress';
 import './globals.css';
 
@@ -50,7 +49,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ScrollProgress />
         {children}
         <ChatWidget />
-        <GrainOverlay />
       </body>
     </html>
   );

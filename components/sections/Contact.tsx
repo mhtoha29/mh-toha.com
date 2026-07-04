@@ -76,9 +76,33 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="section" style={{ background: 'var(--bg-dark)' }}>
+    <section id="contact" className="section" style={{ background: 'linear-gradient(180deg, #0A1120 0%, #0B1428 50%, #070C18 100%)', position: 'relative', overflow: 'hidden' }}>
+      {/* Premium ambient background */}
+      <div aria-hidden style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }}>
+        {/* soft blueprint grid */}
+        <div className="blueprint-bg" style={{ position: 'absolute', inset: 0, opacity: 0.05 }} />
+        {/* aurora glow blobs — slow, smooth */}
+        <div style={{
+          position: 'absolute', top: '-12%', right: '-6%',
+          width: '520px', height: '520px', borderRadius: '50%',
+          background: 'radial-gradient(circle, rgba(14,165,233,0.13) 0%, transparent 62%)',
+          filter: 'blur(50px)', animation: 'blobMove1 24s ease-in-out infinite',
+        }} />
+        <div style={{
+          position: 'absolute', bottom: '-18%', left: '-8%',
+          width: '460px', height: '460px', borderRadius: '50%',
+          background: 'radial-gradient(circle, rgba(99,102,241,0.11) 0%, transparent 62%)',
+          filter: 'blur(56px)', animation: 'blobMove2 30s ease-in-out infinite',
+        }} />
+        {/* top hairline accent */}
+        <div style={{
+          position: 'absolute', top: 0, left: 0, right: 0, height: '1px',
+          background: 'linear-gradient(90deg, transparent, rgba(56,189,248,0.5) 50%, transparent)',
+        }} />
+      </div>
+
       <div className="sec-number" style={{ color: 'rgba(14,165,233,0.04)' }}>09</div>
-      <div className="container" ref={ref}>
+      <div className="container" ref={ref} style={{ position: 'relative', zIndex: 1 }}>
 
         {/* Header */}
         <div style={{
