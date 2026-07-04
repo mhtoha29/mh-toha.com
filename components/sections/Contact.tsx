@@ -1,6 +1,7 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
 import { Mail, Phone, Building2, Clock, Send, Check } from 'lucide-react';
+import Starfield from '@/components/fx/Starfield';
 
 const LinkedinIcon = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
@@ -91,6 +92,8 @@ export default function Contact() {
       <div aria-hidden style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }}>
         {/* soft blueprint grid */}
         <div className="blueprint-bg" style={{ position: 'absolute', inset: 0, opacity: 0.05 }} />
+        {/* night-sky starfield */}
+        <Starfield opacity={0.85} />
         {/* aurora glow blobs — slow, smooth */}
         <div style={{
           position: 'absolute', top: '-12%', right: '-6%',
@@ -193,7 +196,7 @@ export default function Contact() {
                   }}>
                   <div style={{ color: 'var(--sky)', flexShrink: 0 }}>{c.icon}</div>
                   <div>
-                    <div style={{ fontSize: '10px', color: 'var(--muted)', letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '2px' }}>{c.label}</div>
+                    <div style={{ fontSize: '11.5px', color: 'var(--muted)', letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '2px' }}>{c.label}</div>
                     <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.8)' }}>{c.value}</div>
                   </div>
                 </a>
@@ -209,7 +212,7 @@ export default function Contact() {
             <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               <div className="rg-2" style={{ gap: '16px' }}>
                 <div>
-                  <label style={{ fontSize: '11px', fontWeight: 600, color: 'var(--muted)', letterSpacing: '1px', textTransform: 'uppercase', display: 'block', marginBottom: '8px' }}>Name</label>
+                  <label style={{ fontSize: '12px', fontWeight: 600, color: 'var(--muted)', letterSpacing: '1px', textTransform: 'uppercase', display: 'block', marginBottom: '8px' }}>Name</label>
                   <input type="text" required placeholder="Your name" value={form.name}
                     onChange={e => setForm(p => ({ ...p, name: e.target.value }))}
                     style={inputStyle}
@@ -217,7 +220,7 @@ export default function Contact() {
                     onBlur={e => inputBlurStyle(e.currentTarget)} />
                 </div>
                 <div>
-                  <label style={{ fontSize: '11px', fontWeight: 600, color: 'var(--muted)', letterSpacing: '1px', textTransform: 'uppercase', display: 'block', marginBottom: '8px' }}>Email</label>
+                  <label style={{ fontSize: '12px', fontWeight: 600, color: 'var(--muted)', letterSpacing: '1px', textTransform: 'uppercase', display: 'block', marginBottom: '8px' }}>Email</label>
                   <input type="email" required placeholder="you@company.com" value={form.email}
                     onChange={e => setForm(p => ({ ...p, email: e.target.value }))}
                     style={inputStyle}
@@ -228,7 +231,7 @@ export default function Contact() {
 
               <div className="rg-2" style={{ gap: '16px' }}>
                 <div>
-                  <label style={{ fontSize: '11px', fontWeight: 600, color: 'var(--muted)', letterSpacing: '1px', textTransform: 'uppercase', display: 'block', marginBottom: '8px' }}>Project Type</label>
+                  <label style={{ fontSize: '12px', fontWeight: 600, color: 'var(--muted)', letterSpacing: '1px', textTransform: 'uppercase', display: 'block', marginBottom: '8px' }}>Project Type</label>
                   <select value={form.projectType}
                     onChange={e => setForm(p => ({ ...p, projectType: e.target.value }))}
                     style={{ ...inputStyle, cursor: 'none' }}
@@ -243,7 +246,7 @@ export default function Contact() {
                   </select>
                 </div>
                 <div>
-                  <label style={{ fontSize: '11px', fontWeight: 600, color: 'var(--muted)', letterSpacing: '1px', textTransform: 'uppercase', display: 'block', marginBottom: '8px' }}>Budget Range</label>
+                  <label style={{ fontSize: '12px', fontWeight: 600, color: 'var(--muted)', letterSpacing: '1px', textTransform: 'uppercase', display: 'block', marginBottom: '8px' }}>Budget Range</label>
                   <select value={form.budget}
                     onChange={e => setForm(p => ({ ...p, budget: e.target.value }))}
                     style={{ ...inputStyle, cursor: 'none' }}
@@ -260,7 +263,7 @@ export default function Contact() {
               </div>
 
               <div>
-                <label style={{ fontSize: '11px', fontWeight: 600, color: 'var(--muted)', letterSpacing: '1px', textTransform: 'uppercase', display: 'block', marginBottom: '8px' }}>Message</label>
+                <label style={{ fontSize: '12px', fontWeight: 600, color: 'var(--muted)', letterSpacing: '1px', textTransform: 'uppercase', display: 'block', marginBottom: '8px' }}>Message</label>
                 <textarea required rows={5} placeholder="Tell me about your project..."
                   value={form.message}
                   onChange={e => setForm(p => ({ ...p, message: e.target.value }))}

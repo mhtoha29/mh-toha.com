@@ -83,7 +83,7 @@ function GearPanel({ vis }: { vis: boolean }) {
             background: '#38BDF8',
             boxShadow: '0 0 10px #38BDF8, 0 0 20px rgba(56,189,248,0.4)',
           }} />
-          <span style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '9px', letterSpacing: '3px', color: 'rgba(186,230,253,0.78)', textTransform: 'uppercase' }}>
+          <span style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '11px', letterSpacing: '3px', color: 'rgba(186,230,253,0.78)', textTransform: 'uppercase' }}>
             Background · Expertise
           </span>
         </div>
@@ -92,7 +92,7 @@ function GearPanel({ vis }: { vis: boolean }) {
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
           <div style={{ flex: 1, height: '1px', background: 'linear-gradient(90deg, #38BDF8 0%, rgba(56,189,248,0.2) 80%, transparent 100%)' }} />
-          <span style={{ fontSize: '11px', fontWeight: 700, color: '#38BDF8', letterSpacing: '2px', textTransform: 'uppercase' }}>
+          <span style={{ fontSize: '12px', fontWeight: 700, color: '#38BDF8', letterSpacing: '2px', textTransform: 'uppercase' }}>
             Digital Builder
           </span>
         </div>
@@ -179,7 +179,7 @@ function GearPanel({ vis }: { vis: boolean }) {
 
       {/* ── Skills stack ── */}
       <div style={{ padding: '14px 18px 22px', borderTop: '1px solid rgba(56,189,248,0.1)', background: 'rgba(0,0,0,0.25)' }}>
-        <div style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '8px', letterSpacing: '2.5px', color: 'rgba(56,189,248,0.55)', textTransform: 'uppercase', marginBottom: '10px' }}>
+        <div style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '10px', letterSpacing: '2.5px', color: 'rgba(56,189,248,0.55)', textTransform: 'uppercase', marginBottom: '10px' }}>
           Skill Stack
         </div>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '5px' }}>
@@ -187,7 +187,7 @@ function GearPanel({ vis }: { vis: boolean }) {
             <span key={i} style={{
               padding: '3px 9px',
               borderRadius: '4px',
-              fontSize: '10px',
+              fontSize: '11.5px',
               fontWeight: 600,
               background: chip.bg,
               color: chip.color,
@@ -271,7 +271,7 @@ export default function About() {
             <div style={stagger(0)}>
               <span style={{
                 display: 'block', marginBottom: '14px',
-                fontSize: '11px', fontWeight: 700, letterSpacing: '3px',
+                fontSize: '12px', fontWeight: 700, letterSpacing: '3px',
                 textTransform: 'uppercase', color: '#38BDF8',
               }}>
                 02 - About
@@ -339,7 +339,7 @@ export default function About() {
                   }}>
                     {vis ? <CountUp target={stat.n} suffix={stat.s} inView={vis} /> : `0${stat.s}`}
                   </div>
-                  <div style={{ fontSize: '10px', color: 'rgba(255,255,255,0.4)', letterSpacing: '1.5px', textTransform: 'uppercase' }}>
+                  <div style={{ fontSize: '11.5px', color: 'rgba(255,255,255,0.4)', letterSpacing: '1.5px', textTransform: 'uppercase' }}>
                     {stat.l}
                   </div>
                 </div>

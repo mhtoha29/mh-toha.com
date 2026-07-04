@@ -1,6 +1,7 @@
 'use client';
 import { ExternalLink } from 'lucide-react';
 import Logo from './Logo';
+import Starfield from '@/components/fx/Starfield';
 
 const LinkedinIcon = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
@@ -46,6 +47,9 @@ export default function Footer() {
       position: 'relative',
       overflow: 'hidden',
     }}>
+      {/* night-sky starfield across whole footer */}
+      <Starfield opacity={0.8} />
+
       {/* ── GIANT CTA ── */}
       <a
         href="#contact"
@@ -82,7 +86,7 @@ export default function Footer() {
         </div>
         <div className="container" style={{ position: 'relative' }}>
           <div style={{
-            fontSize: '11px', fontWeight: 700, letterSpacing: '3px',
+            fontSize: '12px', fontWeight: 700, letterSpacing: '3px',
             textTransform: 'uppercase', color: 'var(--sky)', marginBottom: '18px',
           }}>
             Have a project in mind?
@@ -143,7 +147,7 @@ export default function Footer() {
 
           {/* Links */}
           <div>
-            <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '2px', color: 'var(--sky)', textTransform: 'uppercase', marginBottom: '16px' }}>Navigation</div>
+            <div style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '2px', color: 'var(--sky)', textTransform: 'uppercase', marginBottom: '16px' }}>Navigation</div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
               {LINKS.map(l => (
                 <a key={l.href} href={l.href} target={l.external ? '_blank' : undefined} rel="noopener noreferrer"
@@ -158,7 +162,7 @@ export default function Footer() {
 
           {/* Contact + socials */}
           <div>
-            <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '2px', color: 'var(--sky)', textTransform: 'uppercase', marginBottom: '16px' }}>Connect</div>
+            <div style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '2px', color: 'var(--sky)', textTransform: 'uppercase', marginBottom: '16px' }}>Connect</div>
             <a href="mailto:connect.mhtoha@gmail.com"
               style={{ display: 'block', fontSize: '13px', color: 'rgba(255,255,255,0.7)', textDecoration: 'none', marginBottom: '8px', transition: 'color 0.2s' }}
               onMouseEnter={e => (e.currentTarget.style.color = '#fff')}

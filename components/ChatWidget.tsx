@@ -290,7 +290,7 @@ export default function ChatWidget() {
                   boxShadow: '0 0 8px rgba(34,197,94,0.8)',
                 }}
               />
-              <span style={{ fontSize: '10.5px', color: 'rgba(255,255,255,0.5)', letterSpacing: '0.4px' }}>
+              <span style={{ fontSize: '11.5px', color: 'rgba(255,255,255,0.5)', letterSpacing: '0.4px' }}>
                 Online · Ask me anything
               </span>
             </div>
@@ -390,7 +390,7 @@ export default function ChatWidget() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginTop: '4px' }}>
               <div
                 style={{
-                  fontSize: '10px',
+                  fontSize: '11.5px',
                   fontWeight: 700,
                   letterSpacing: '1.5px',
                   textTransform: 'uppercase',
@@ -503,7 +503,7 @@ export default function ChatWidget() {
           <div
             style={{
               textAlign: 'center',
-              fontSize: '9px',
+              fontSize: '11px',
               letterSpacing: '1px',
               color: 'rgba(255,255,255,0.22)',
               marginTop: '8px',

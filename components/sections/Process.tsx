@@ -115,7 +115,7 @@ export default function Process() {
                   {s.icon}
                   <div style={{
                     position: 'absolute', top: '-6px', right: '-6px',
-                    fontSize: '8px', fontWeight: 700, letterSpacing: '1px',
+                    fontSize: '10px', fontWeight: 700, letterSpacing: '1px',
                     color: s.color, background: 'var(--bg)',
                     padding: '1px 5px', borderRadius: '4px', border: `1px solid ${s.color}30`,
                   }}>{s.num}</div>
@@ -204,7 +204,7 @@ export default function Process() {
                 background: 'linear-gradient(0deg, rgba(0,0,0,0.8), transparent)',
               }}>
                 <div style={{ fontSize: '13px', fontWeight: 600, color: '#fff' }}>{VIDEOS[vid.idx].title}</div>
-                <div style={{ fontSize: '10px', color: 'rgba(255,255,255,0.5)', marginTop: '2px' }}>Click to play</div>
+                <div style={{ fontSize: '11.5px', color: 'rgba(255,255,255,0.5)', marginTop: '2px' }}>Click to play</div>
               </div>
             </div>
 

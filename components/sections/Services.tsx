@@ -268,7 +268,7 @@ function ServiceCard({ s, vis, i }: { s: typeof SERVICES[0]; vis: boolean; i: nu
       {/* Category chip */}
       <span style={{
         display: 'inline-block',
-        fontSize: '9px', fontWeight: 700, letterSpacing: '1.2px',
+        fontSize: '11px', fontWeight: 700, letterSpacing: '1.2px',
         textTransform: 'uppercase',
         color: s.color,
         background: s.bg,

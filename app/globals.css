@@ -103,18 +103,18 @@ body {
 .body-lg { font-size: clamp(15px, 1.2vw, 18px); line-height: 1.8; color: var(--slate); }
 .body-md { font-size: clamp(13px, 1vw, 15px); line-height: 1.75; color: var(--muted); }
 .label {
-  font-size: 11px;
+  font-size: 12.5px;
   font-weight: 700;
-  letter-spacing: 3px;
+  letter-spacing: 2.5px;
   text-transform: uppercase;
   color: var(--sky);
   display: block;
 }
 .mono {
   font-family: var(--font-mono, 'JetBrains Mono'), 'Courier New', monospace;
-  font-size: 11px;
+  font-size: 12.5px;
   letter-spacing: 2px;
-  color: var(--dim);
+  color: var(--muted);
 }
 
 /* ─── GRADIENT TEXT ─── */

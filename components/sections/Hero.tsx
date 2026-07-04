@@ -410,7 +410,7 @@ export default function Hero() {
             </div>
           )}
 
-          <div className="mono" style={{ ...delay(0), marginBottom: '20px', display: 'block' }}>
+          <div className="mono" style={{ ...delay(0), marginBottom: '20px', display: 'block', fontSize: '13.5px', fontWeight: 600, color: 'var(--slate)', letterSpacing: '2.5px' }}>
             MAHMUDUL HASAN TOHA · DHAKA, BD
           </div>
 
@@ -490,7 +490,7 @@ export default function Hero() {
                 {i > 0 && <div style={{ width: '1px', height: '26px', background: 'var(--border2)' }} />}
                 <div>
                   <div style={{ fontSize: 'clamp(18px, 2vw, 24px)', fontWeight: 800, color: 'var(--navy)', lineHeight: 1, letterSpacing: '-0.02em' }}>{s.n}</div>
-                  <div className="mono" style={{ fontSize: '9px', marginTop: '4px' }}>{s.l.toUpperCase()}</div>
+                  <div className="mono" style={{ fontSize: '11px', marginTop: '4px' }}>{s.l.toUpperCase()}</div>
                 </div>
               </div>
             ))}
@@ -532,7 +532,7 @@ export default function Hero() {
                 <div style={{ color: '#fff', fontWeight: 700, fontSize: '13px', marginBottom: '3px' }}>
                   Mahmudul Hasan Toha
                 </div>
-                <div style={{ color: 'var(--sky)', fontSize: '10px', letterSpacing: '1.5px', textTransform: 'uppercase' }}>
+                <div style={{ color: 'var(--sky)', fontSize: '11.5px', letterSpacing: '1.5px', textTransform: 'uppercase' }}>
                   CEO · TEX-IT & BYV Tech
                 </div>
               </div>
@@ -558,7 +558,7 @@ export default function Hero() {
         opacity: vis ? 0.4 : 0, transition: 'opacity 0.8s 1.2s',
       }}>
         <div style={{ width: '40px', height: '1px', background: 'linear-gradient(90deg, var(--sky), transparent)' }} className="pulse" />
-        <span className="mono" style={{ fontSize: '9px' }}>SCROLL</span>
+        <span className="mono" style={{ fontSize: '11px' }}>SCROLL</span>
       </div>
     </section>
   );

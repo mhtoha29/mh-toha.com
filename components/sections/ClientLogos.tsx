@@ -179,7 +179,7 @@ function ClientCard({ client }: { client: typeof CLIENTS[0] }) {
         <div style={{ marginBottom: '8px' }}>
           <span style={{
             display: 'inline-block',
-            fontSize: '9px', fontWeight: 700, letterSpacing: '1px',
+            fontSize: '11px', fontWeight: 700, letterSpacing: '1px',
             textTransform: 'uppercase',
             color: c.color,
             background: c.bg,
@@ -202,7 +202,7 @@ function ClientCard({ client }: { client: typeof CLIENTS[0] }) {
 
         {/* Description */}
         <div style={{
-          fontSize: '10.5px', lineHeight: 1.55,
+          fontSize: '11.5px', lineHeight: 1.55,
           color: 'var(--muted)',
           marginBottom: '14px', flex: 1,
         }}>
@@ -225,7 +225,7 @@ function ClientCard({ client }: { client: typeof CLIENTS[0] }) {
             rel="noopener noreferrer"
             style={{
               display: 'inline-flex', alignItems: 'center', gap: '5px',
-              fontSize: '10px', fontWeight: 700, letterSpacing: '0.8px',
+              fontSize: '11.5px', fontWeight: 700, letterSpacing: '0.8px',
               textTransform: 'uppercase', textDecoration: 'none',
               color: hov ? c.color : 'var(--muted)',
               transition: 'color 0.25s',
@@ -240,7 +240,7 @@ function ClientCard({ client }: { client: typeof CLIENTS[0] }) {
         ) : (
           <span style={{
             display: 'inline-flex', alignItems: 'center', gap: '5px',
-            fontSize: '10px', fontWeight: 700, letterSpacing: '0.8px',
+            fontSize: '11.5px', fontWeight: 700, letterSpacing: '0.8px',
             textTransform: 'uppercase',
             color: 'rgba(100,116,139,0.4)',
           }}>
@@ -290,7 +290,7 @@ export default function ClientLogos() {
           <div style={{ display: 'flex', justifyContent: 'center', gap: '8px', flexWrap: 'wrap', marginTop: '20px' }}>
             {(['RMG', 'Oil & Gas', 'Personal Brand', 'Industrial'] as Cat[]).map(cat => (
               <span key={cat} style={{
-                fontSize: '10px', fontWeight: 700, letterSpacing: '0.8px',
+                fontSize: '11.5px', fontWeight: 700, letterSpacing: '0.8px',
                 textTransform: 'uppercase', padding: '4px 12px',
                 background: CAT[cat].bg,
                 color: CAT[cat].color,

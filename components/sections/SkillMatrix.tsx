@@ -343,7 +343,7 @@ export default function SkillMatrix() {
                 <span style={{ fontSize: '12px', fontWeight: 700, color: '#fff', letterSpacing: '0.2px' }}>
                   {skill.name}
                 </span>
-                <span style={{ fontSize: '11px', fontWeight: 800, color: '#38BDF8' }}>
+                <span style={{ fontSize: '12px', fontWeight: 800, color: '#38BDF8' }}>
                   {skill.level}%
                 </span>
               </div>

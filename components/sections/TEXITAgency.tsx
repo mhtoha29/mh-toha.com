@@ -301,7 +301,7 @@ export default function TEXITAgency() {
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
                 <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: 'var(--sky)', boxShadow: '0 0 12px var(--sky)' }} />
                 <span style={{ fontSize: '18px', fontWeight: 800, color: '#fff', letterSpacing: '-0.02em' }}>TEX-IT Agency</span>
-                <span style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '1.5px', color: 'var(--sky)', background: 'rgba(14,165,233,0.1)', border: '1px solid rgba(14,165,233,0.2)', borderRadius: '4px', padding: '2px 8px', textTransform: 'uppercase' }}>RMG Focused</span>
+                <span style={{ fontSize: '11.5px', fontWeight: 700, letterSpacing: '1.5px', color: 'var(--sky)', background: 'rgba(14,165,233,0.1)', border: '1px solid rgba(14,165,233,0.2)', borderRadius: '4px', padding: '2px 8px', textTransform: 'uppercase' }}>RMG Focused</span>
               </div>
               <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.65)', lineHeight: 1.8, marginBottom: '24px' }}>
                 Bangladesh&apos;s 10,000+ garment factories compete for global buyers but lack the digital presence to close deals online.
@@ -312,7 +312,7 @@ export default function TEXITAgency() {
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
                 {TEXIT_SERVICES.map((s, i) => (
                   <span key={i} style={{
-                    fontSize: '10px', fontWeight: 600, letterSpacing: '0.8px', padding: '4px 10px',
+                    fontSize: '11.5px', fontWeight: 600, letterSpacing: '0.8px', padding: '4px 10px',
                     background: 'rgba(14,165,233,0.07)', color: 'rgba(255,255,255,0.65)',
                     border: '1px solid rgba(14,165,233,0.14)', borderRadius: '20px',
                     opacity: vis ? 1 : 0, transition: `opacity 0.4s ${0.3 + i * 0.04}s`,
@@ -340,7 +340,7 @@ export default function TEXITAgency() {
                     {vis ? <CountUp target={stat.n} suffix={stat.s} inView={vis} /> : `0${stat.s}`}
                   </div>
                   <div style={{ fontSize: '12px', fontWeight: 700, color: '#fff', marginBottom: '2px' }}>{stat.l}</div>
-                  <div style={{ fontSize: '11px', color: 'rgba(255,255,255,0.35)' }}>{stat.sub}</div>
+                  <div style={{ fontSize: '12px', color: 'rgba(255,255,255,0.35)' }}>{stat.sub}</div>
                 </div>
               ))}
               <a href="https://texit.byv.life" target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ width: '100%', justifyContent: 'center', marginTop: '4px' }}>
@@ -368,7 +368,7 @@ export default function TEXITAgency() {
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
                 <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#6366F1', boxShadow: '0 0 12px #6366F1' }} />
                 <span style={{ fontSize: '18px', fontWeight: 800, color: '#fff', letterSpacing: '-0.02em' }}>BYV Tech</span>
-                <span style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '1.5px', color: '#22D3EE', background: 'rgba(34,211,238,0.08)', border: '1px solid rgba(34,211,238,0.2)', borderRadius: '4px', padding: '2px 8px', textTransform: 'uppercase' }}>International</span>
+                <span style={{ fontSize: '11.5px', fontWeight: 700, letterSpacing: '1.5px', color: '#22D3EE', background: 'rgba(34,211,238,0.08)', border: '1px solid rgba(34,211,238,0.2)', borderRadius: '4px', padding: '2px 8px', textTransform: 'uppercase' }}>International</span>
               </div>
               <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.65)', lineHeight: 1.8, marginBottom: '24px' }}>
                 BYV Tech is the international arm - full-stack web &amp; app development, AI-powered products, automation platforms,
@@ -380,7 +380,7 @@ export default function TEXITAgency() {
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
                 {BYV_SERVICES.map((s, i) => (
                   <span key={i} style={{
-                    fontSize: '10px', fontWeight: 600, letterSpacing: '0.8px', padding: '4px 10px',
+                    fontSize: '11.5px', fontWeight: 600, letterSpacing: '0.8px', padding: '4px 10px',
                     background: 'rgba(99,102,241,0.08)', color: 'rgba(255,255,255,0.65)',
                     border: '1px solid rgba(99,102,241,0.16)', borderRadius: '20px',
                     opacity: vis ? 1 : 0, transition: `opacity 0.4s ${0.45 + i * 0.04}s`,
@@ -406,7 +406,7 @@ export default function TEXITAgency() {
                   <span style={{ fontSize: '20px' }}>{item.icon}</span>
                   <div>
                     <div style={{ fontSize: '13px', fontWeight: 700, color: '#fff', marginBottom: '2px' }}>{item.label}</div>
-                    <div style={{ fontSize: '11px', color: 'rgba(255,255,255,0.4)' }}>{item.desc}</div>
+                    <div style={{ fontSize: '12px', color: 'rgba(255,255,255,0.4)' }}>{item.desc}</div>
                   </div>
                 </div>
               ))}

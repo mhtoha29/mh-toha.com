@@ -56,7 +56,7 @@ export default function Experience() {
           {/* EDUCATION */}
           <div>
             <div style={{
-              fontSize: '11px', fontWeight: 700, letterSpacing: '3px', textTransform: 'uppercase',
+              fontSize: '12px', fontWeight: 700, letterSpacing: '3px', textTransform: 'uppercase',
               color: 'var(--sky)', marginBottom: '28px',
               opacity: vis ? 1 : 0, transition: 'opacity 0.6s 0.1s',
             }}>
@@ -104,10 +104,10 @@ export default function Experience() {
                         position: 'absolute', left: 0, top: '15%', bottom: '15%', width: '2px',
                         background: e.color, opacity: isHov ? 1 : 0, transition: 'opacity 0.3s',
                       }} />
-                      <div className="mono" style={{ color: e.color, marginBottom: '4px', fontSize: '10px' }}>{e.period}</div>
+                      <div className="mono" style={{ color: e.color, marginBottom: '4px', fontSize: '11.5px' }}>{e.period}</div>
                       <div style={{ fontWeight: 700, fontSize: '14px', color: 'var(--navy)', marginBottom: '2px' }}>{e.role}</div>
                       <div style={{ fontSize: '12px', color: 'var(--muted)' }}>{e.org}</div>
-                      <div className="chip chip-sky" style={{ marginTop: '8px', fontSize: '9px' }}>{e.cgpa}</div>
+                      <div className="chip chip-sky" style={{ marginTop: '8px', fontSize: '11px' }}>{e.cgpa}</div>
                     </div>
                   </div>
                 );
@@ -118,7 +118,7 @@ export default function Experience() {
           {/* WORK */}
           <div>
             <div style={{
-              fontSize: '11px', fontWeight: 700, letterSpacing: '3px', textTransform: 'uppercase',
+              fontSize: '12px', fontWeight: 700, letterSpacing: '3px', textTransform: 'uppercase',
               color: 'var(--emerald)', marginBottom: '28px',
               opacity: vis ? 1 : 0, transition: 'opacity 0.6s 0.15s',
             }}>
@@ -166,10 +166,10 @@ export default function Experience() {
                         position: 'absolute', left: 0, top: '15%', bottom: '15%', width: '2px',
                         background: w.color, opacity: isHov ? 1 : 0, transition: 'opacity 0.3s',
                       }} />
-                      <div className="mono" style={{ color: w.color, marginBottom: '4px', fontSize: '10px' }}>{w.period}</div>
+                      <div className="mono" style={{ color: w.color, marginBottom: '4px', fontSize: '11.5px' }}>{w.period}</div>
                       <div style={{ fontWeight: 700, fontSize: '14px', color: 'var(--navy)', marginBottom: '2px' }}>{w.role}</div>
                       <div style={{ fontSize: '12px', color: 'var(--muted)' }}>{w.org}</div>
-                      {isCurrent && <div className="chip chip-emerald" style={{ marginTop: '8px', fontSize: '9px' }}>Current</div>}
+                      {isCurrent && <div className="chip chip-emerald" style={{ marginTop: '8px', fontSize: '11px' }}>Current</div>}
                     </div>
                   </div>
                 );

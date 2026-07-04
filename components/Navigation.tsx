@@ -87,7 +87,7 @@ export default function Navigation() {
             <a href="#contact"
               onClick={e => { e.preventDefault(); scrollTo('#contact'); }}
               className="btn-primary"
-              style={{ padding: '10px 24px', fontSize: '11px' }}>
+              style={{ padding: '10px 24px', fontSize: '12px' }}>
               Hire Me
             </a>
 
@@ -149,7 +149,7 @@ export default function Navigation() {
           padding: '0 32px', position: 'relative', zIndex: 1, maxWidth: '520px', width: '100%', margin: '0 auto',
         }}>
           <div style={{
-            fontFamily: 'var(--font-mono, monospace)', fontSize: '10px', letterSpacing: '4px',
+            fontFamily: 'var(--font-mono, monospace)', fontSize: '11.5px', letterSpacing: '4px',
             color: 'rgba(56,189,248,0.6)', textTransform: 'uppercase', marginBottom: '28px', paddingLeft: '2px',
             opacity: menuOpen ? 1 : 0, transform: menuOpen ? 'none' : 'translateY(10px)',
             transition: 'opacity 0.5s 0.1s, transform 0.5s 0.1s',
@@ -217,7 +217,7 @@ export default function Navigation() {
         }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', marginBottom: '10px' }}>
             <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#34D399', boxShadow: '0 0 8px #34D399' }} />
-            <span style={{ fontSize: '11px', fontWeight: 600, color: '#34D399', letterSpacing: '0.5px' }}>Open for projects</span>
+            <span style={{ fontSize: '12px', fontWeight: 600, color: '#34D399', letterSpacing: '0.5px' }}>Open for projects</span>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
             <a href="mailto:connect.mhtoha@gmail.com" style={{ fontSize: '13px', color: 'rgba(255,255,255,0.6)', textDecoration: 'none' }}>

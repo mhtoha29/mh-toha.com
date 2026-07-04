@@ -51,7 +51,7 @@ export default function SelectedWork() {
             <button key={cat} onClick={() => setFilter(cat)}
               style={{
                 padding: '8px 20px', borderRadius: '100px',
-                fontSize: '11px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase',
+                fontSize: '12px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase',
                 border: '1px solid',
                 borderColor: filter === cat ? 'var(--sky)' : 'rgba(255,255,255,0.12)',
                 background: filter === cat ? 'rgba(14,165,233,0.15)' : 'transparent',
@@ -136,19 +136,19 @@ export default function SelectedWork() {
 
                 {modal.challenge && (
                   <div style={{ marginBottom: '20px' }}>
-                    <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '2px', color: 'var(--sky)', marginBottom: '8px', textTransform: 'uppercase' }}>Challenge</div>
+                    <div style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '2px', color: 'var(--sky)', marginBottom: '8px', textTransform: 'uppercase' }}>Challenge</div>
                     <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', lineHeight: 1.7 }}>{modal.challenge}</p>
                   </div>
                 )}
                 {modal.approach && (
                   <div style={{ marginBottom: '20px' }}>
-                    <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '2px', color: 'var(--cyan)', marginBottom: '8px', textTransform: 'uppercase' }}>Approach</div>
+                    <div style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '2px', color: 'var(--cyan)', marginBottom: '8px', textTransform: 'uppercase' }}>Approach</div>
                     <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', lineHeight: 1.7 }}>{modal.approach}</p>
                   </div>
                 )}
                 {modal.result && (
                   <div style={{ marginBottom: '24px' }}>
-                    <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '2px', color: 'var(--emerald)', marginBottom: '8px', textTransform: 'uppercase' }}>Result</div>
+                    <div style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '2px', color: 'var(--emerald)', marginBottom: '8px', textTransform: 'uppercase' }}>Result</div>
                     <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', lineHeight: 1.7 }}>{modal.result}</p>
                   </div>
                 )}
@@ -162,7 +162,7 @@ export default function SelectedWork() {
 
                 {/* Tech stack */}
                 <div style={{ marginBottom: '28px' }}>
-                  <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '2px', color: 'var(--muted)', marginBottom: '8px', textTransform: 'uppercase' }}>Tech Stack</div>
+                  <div style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '2px', color: 'var(--muted)', marginBottom: '8px', textTransform: 'uppercase' }}>Tech Stack</div>
                   <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
                     {modal.tech.map((t, i) => <span key={i} className="chip chip-sky">{t}</span>)}
                   </div>
@@ -307,13 +307,13 @@ function ProjectCard({ project, vis, i, onOpen }: { project: Project; vis: boole
         {/* Actions */}
         <div style={{ display: 'flex', gap: '10px' }}>
           <button onClick={onOpen} className="btn-primary"
-            style={{ flex: 1, justifyContent: 'center', padding: '10px 16px', fontSize: '11px' }}>
+            style={{ flex: 1, justifyContent: 'center', padding: '10px 16px', fontSize: '12px' }}>
             Case Study <ArrowRight size={13} />
           </button>
           {project.liveUrl !== '#' && (
             <a href={project.liveUrl} target="_blank" rel="noopener noreferrer"
               className="btn-outline"
-              style={{ padding: '10px 16px', fontSize: '11px', color: 'rgba(255,255,255,0.7)', borderColor: 'rgba(255,255,255,0.2)' }}
+              style={{ padding: '10px 16px', fontSize: '12px', color: 'rgba(255,255,255,0.7)', borderColor: 'rgba(255,255,255,0.2)' }}
               onMouseEnter={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.1)'; e.currentTarget.style.color = '#fff'; }}
               onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = 'rgba(255,255,255,0.7)'; }}>
               Live <ExternalLink size={12} />
