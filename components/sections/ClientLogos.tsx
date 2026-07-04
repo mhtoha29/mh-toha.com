@@ -163,9 +163,10 @@ function ClientCard({ client }: { client: typeof CLIENTS[0] }) {
       }}>
         <div style={{
           position: 'relative', width: '120px', height: '52px',
-          filter: hov ? 'none' : 'grayscale(55%)',
-          opacity: hov ? 1 : 0.78,
-          transition: 'filter 0.3s, opacity 0.3s',
+          filter: hov ? 'none' : 'grayscale(18%)',
+          opacity: hov ? 1 : 0.94,
+          transform: hov ? 'scale(1.06)' : 'scale(1)',
+          transition: 'filter 0.3s, opacity 0.3s, transform 0.3s ease',
         }}>
           <Image src={client.src} alt={client.alt} fill style={{ objectFit: 'contain' }} sizes="120px" />
         </div>

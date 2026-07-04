@@ -151,7 +151,7 @@ export default function Hero() {
         const mat = new THREE.MeshBasicMaterial({
           color: new THREE.Color(isHub ? '#0EA5E9' : isMid ? '#7C3AED' : '#94A3B8'),
           transparent: true,
-          opacity: isHub ? 1 : isMid ? 0.85 : 0.5,
+          opacity: isHub ? 1 : isMid ? 0.9 : 0.68,
         });
         const mesh = new THREE.Mesh(geo, mat);
         const pos = new THREE.Vector3(x, y, z);
@@ -194,7 +194,7 @@ export default function Hero() {
       }
       const edgeGeo = new THREE.BufferGeometry();
       edgeGeo.setAttribute('position', new THREE.BufferAttribute(edgeBuf, 3));
-      const edgeMat = new THREE.LineBasicMaterial({ color: 0x0EA5E9, transparent: true, opacity: 0.10 });
+      const edgeMat = new THREE.LineBasicMaterial({ color: 0x0EA5E9, transparent: true, opacity: 0.22 });
       group.add(new THREE.LineSegments(edgeGeo, edgeMat));
       allGeos.push(edgeGeo); allMats.push(edgeMat);
 
@@ -358,7 +358,7 @@ export default function Hero() {
         position: 'absolute', inset: 0,
         width: '100%', height: '100%',
         zIndex: 2, pointerEvents: 'none',
-        opacity: isMobile ? 0.45 : 0.82,
+        opacity: isMobile ? 0.55 : 0.95,
       }} />
 
       {/* Left gradient shield */}

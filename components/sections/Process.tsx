@@ -259,13 +259,14 @@ export default function Process() {
       <style>{`
         @media (max-width: 640px) {
           .process-row {
-            flex-wrap: wrap;
-            overflow-x: visible;
-            justify-content: center;
-            row-gap: 72px;
-            column-gap: 12px;
+            display: grid !important;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px 12px !important;
+            overflow-x: visible !important;
+            align-items: start;
           }
-          .process-item { flex: 0 1 42%; min-width: 130px; }
+          /* last odd item spans full width, centered */
+          .process-item:last-child:nth-child(odd) { grid-column: 1 / -1; }
           .process-connector { display: none; }
         }
       `}</style>

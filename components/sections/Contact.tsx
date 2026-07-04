@@ -16,6 +16,16 @@ const GithubIcon = () => (
 
 type Status = 'idle' | 'loading' | 'success' | 'error';
 
+const CONTACT_PARTICLES = [
+  { left: '12%', size: 4,   color: 'rgba(56,189,248,0.7)',  dur: 14, delay: 0 },
+  { left: '28%', size: 3,   color: 'rgba(129,140,248,0.6)', dur: 18, delay: 3 },
+  { left: '44%', size: 5,   color: 'rgba(56,189,248,0.6)',  dur: 16, delay: 6 },
+  { left: '61%', size: 3.5, color: 'rgba(52,211,153,0.55)', dur: 20, delay: 2 },
+  { left: '74%', size: 4,   color: 'rgba(129,140,248,0.6)', dur: 15, delay: 8 },
+  { left: '88%', size: 3,   color: 'rgba(56,189,248,0.6)',  dur: 19, delay: 4 },
+  { left: '52%', size: 2.5, color: 'rgba(255,255,255,0.5)', dur: 22, delay: 10 },
+];
+
 export default function Contact() {
   const ref = useRef<HTMLDivElement>(null);
   const [vis, setVis] = useState(false);
@@ -99,7 +109,26 @@ export default function Contact() {
           position: 'absolute', top: 0, left: 0, right: 0, height: '1px',
           background: 'linear-gradient(90deg, transparent, rgba(56,189,248,0.5) 50%, transparent)',
         }} />
+        {/* drifting light particles - smooth premium movement */}
+        {CONTACT_PARTICLES.map((p, k) => (
+          <span key={k} style={{
+            position: 'absolute', left: p.left, bottom: '-10px',
+            width: p.size, height: p.size, borderRadius: '50%',
+            background: p.color,
+            boxShadow: `0 0 ${p.size * 3}px ${p.color}`,
+            animation: `floatUp ${p.dur}s linear ${p.delay}s infinite`,
+            opacity: 0,
+          }} />
+        ))}
       </div>
+      <style>{`
+        @keyframes floatUp {
+          0%   { transform: translateY(0) scale(0.6);   opacity: 0; }
+          12%  { opacity: 0.8; }
+          85%  { opacity: 0.5; }
+          100% { transform: translateY(-88vh) scale(1); opacity: 0; }
+        }
+      `}</style>
 
       <div className="sec-number" style={{ color: 'rgba(14,165,233,0.04)' }}>09</div>
       <div className="container" ref={ref} style={{ position: 'relative', zIndex: 1 }}>

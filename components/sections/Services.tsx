@@ -107,6 +107,93 @@ const SERVICES = [
   },
 ];
 
+/* Per-service animated background motif — themed to each service, subtle, brightens on hover */
+function ServiceBg({ idx, color, hov }: { idx: number; color: string; hov: boolean }) {
+  const base = hov ? 0.5 : 0.22;
+  const wrap = (children: React.ReactNode) => (
+    <div aria-hidden style={{
+      position: 'absolute', inset: 0, zIndex: 0, pointerEvents: 'none', overflow: 'hidden',
+      opacity: base, transition: 'opacity 0.4s ease',
+    }}>
+      <svg width="100%" height="100%" viewBox="0 0 200 200" preserveAspectRatio="xMaxYMax slice"
+        style={{ position: 'absolute', right: '-6%', bottom: '-8%', width: '78%', height: '78%' }}>
+        {children}
+      </svg>
+    </div>
+  );
+  const dur = hov ? 0.6 : 1; // speed-up factor on hover (via animate values fixed; we vary via CSS below)
+
+  switch (idx) {
+    case 0: // AI — neural nodes + traveling pulse
+      return wrap(<g stroke={color} fill={color}>
+        {[[40,60],[110,40],[150,90],[80,120],[130,150],[50,140]].map(([x,y],k)=>(
+          <circle key={k} cx={x} cy={y} r="3" opacity="0.9" />
+        ))}
+        <g stroke={color} strokeWidth="1" opacity="0.5" fill="none">
+          <line x1="40" y1="60" x2="110" y2="40"/><line x1="110" y1="40" x2="150" y2="90"/>
+          <line x1="150" y1="90" x2="130" y2="150"/><line x1="80" y1="120" x2="130" y2="150"/>
+          <line x1="40" y1="60" x2="80" y2="120"/><line x1="80" y1="120" x2="50" y2="140"/>
+          <line x1="110" y1="40" x2="80" y2="120"/>
+        </g>
+        <circle r="3.5" fill={color}>
+          <animateMotion dur={`${3.2*dur}s`} repeatCount="indefinite" path="M40 60 L110 40 L150 90 L130 150 L80 120 Z" />
+        </circle>
+      </g>);
+    case 1: // ERP — grid of blocks pulsing
+      return wrap(<g fill={color}>
+        {Array.from({length:9}).map((_,k)=>{
+          const x=50+(k%3)*46, y=50+Math.floor(k/3)*46;
+          return <rect key={k} x={x} y={y} width="34" height="34" rx="6" opacity="0.35">
+            <animate attributeName="opacity" values="0.2;0.85;0.2" dur={`${2.4*dur}s`} begin={`${k*0.22}s`} repeatCount="indefinite"/>
+          </rect>;
+        })}
+      </g>);
+    case 2: // CRM — pipeline stages + flowing dot
+      return wrap(<g>
+        {[60,100,140].map((y,k)=>(
+          <rect key={k} x="46" y={y} width="120" height="20" rx="10" fill="none" stroke={color} strokeWidth="1.4" opacity="0.5"/>
+        ))}
+        {[60,100,140].map((y,k)=>(
+          <circle key={k} cy={y+10} r="4" fill={color}>
+            <animate attributeName="cx" values="52;160;52" dur={`${3*dur}s`} begin={`${k*0.5}s`} repeatCount="indefinite"/>
+          </circle>
+        ))}
+      </g>);
+    case 3: // Analytics — animated bars
+      return wrap(<g fill={color}>
+        {[0,1,2,3].map((k)=>{
+          const x=52+k*32;
+          return <rect key={k} x={x} y="60" width="20" height="110" rx="4" opacity="0.7" style={{transformOrigin:`${x+10}px 170px`}}>
+            <animateTransform attributeName="transform" type="scale" values="1 0.35;1 1;1 0.5;1 0.85;1 0.35"
+              dur={`${2.8*dur}s`} begin={`${k*0.2}s`} repeatCount="indefinite" additive="sum"/>
+          </rect>;
+        })}
+      </g>);
+    case 4: // Digital presence — orbit rings + orbiting dot
+      return wrap(<g>
+        <circle cx="110" cy="110" r="60" fill="none" stroke={color} strokeWidth="1.2" opacity="0.4"/>
+        <ellipse cx="110" cy="110" rx="60" ry="24" fill="none" stroke={color} strokeWidth="1" opacity="0.35"/>
+        <ellipse cx="110" cy="110" rx="24" ry="60" fill="none" stroke={color} strokeWidth="1" opacity="0.35"/>
+        <g style={{transformOrigin:'110px 110px', animation:`spin ${hov?7:12}s linear infinite`}}>
+          <circle cx="170" cy="110" r="4.5" fill={color}/>
+        </g>
+      </g>);
+    default: // 5 Automation — flowing dashed conduits
+      return wrap(<g stroke={color} fill="none">
+        {[55,95,135].map((y,k)=>(
+          <path key={k} d={`M40 ${y} C 80 ${y-24}, 120 ${y+24}, 180 ${y}`} strokeWidth="1.6" strokeDasharray="8 8" opacity="0.55">
+            <animate attributeName="stroke-dashoffset" from="0" to={k%2?'-64':'64'} dur={`${2.4*dur}s`} repeatCount="indefinite"/>
+          </path>
+        ))}
+        {[55,95,135].map((y,k)=>(
+          <circle key={k} r="3.5" fill={color}>
+            <animateMotion dur={`${3*dur}s`} begin={`${k*0.4}s`} repeatCount="indefinite" path={`M40 ${y} C 80 ${y-24}, 120 ${y+24}, 180 ${y}`}/>
+          </circle>
+        ))}
+      </g>);
+  }
+}
+
 function ServiceCard({ s, vis, i }: { s: typeof SERVICES[0]; vis: boolean; i: number }) {
   const [hov, setHov] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -150,6 +237,10 @@ function ServiceCard({ s, vis, i }: { s: typeof SERVICES[0]; vis: boolean; i: nu
         cursor: 'default',
       }}>
 
+      {/* Themed animated background */}
+      <ServiceBg idx={i} color={s.color} hov={hov} />
+
+      <div style={{ position: 'relative', zIndex: 1 }}>
       {/* Number watermark */}
       <div style={{
         position: 'absolute', top: '14px', right: '18px',
@@ -234,6 +325,7 @@ function ServiceCard({ s, vis, i }: { s: typeof SERVICES[0]; vis: boolean; i: nu
           </li>
         ))}
       </ul>
+      </div>
     </div>
   );
 }

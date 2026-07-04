@@ -29,6 +29,14 @@ const SOCIALS = [
   { icon: <ExternalLink size={16} />, href: 'https://texit.byv.life',                          label: 'Agency' },
 ];
 
+const FOOTER_PARTICLES = [
+  { left: '15%', size: 3.5, color: 'rgba(56,189,248,0.6)',  dur: 16, delay: 0 },
+  { left: '35%', size: 3,   color: 'rgba(129,140,248,0.55)', dur: 20, delay: 5 },
+  { left: '58%', size: 4,   color: 'rgba(56,189,248,0.55)',  dur: 18, delay: 2 },
+  { left: '78%', size: 3,   color: 'rgba(129,140,248,0.5)',  dur: 22, delay: 8 },
+  { left: '90%', size: 2.5, color: 'rgba(255,255,255,0.45)', dur: 24, delay: 11 },
+];
+
 export default function Footer() {
   return (
     <footer style={{
@@ -61,6 +69,17 @@ export default function Footer() {
           filter: 'blur(40px)', pointerEvents: 'none',
           animation: 'footerGlow 8s ease-in-out infinite',
         }} />
+        {/* drifting light particles */}
+        <div aria-hidden style={{ position: 'absolute', inset: 0, overflow: 'hidden', pointerEvents: 'none' }}>
+          {FOOTER_PARTICLES.map((p, k) => (
+            <span key={k} style={{
+              position: 'absolute', left: p.left, bottom: '-8px',
+              width: p.size, height: p.size, borderRadius: '50%',
+              background: p.color, boxShadow: `0 0 ${p.size * 3}px ${p.color}`,
+              animation: `floatUp ${p.dur}s linear ${p.delay}s infinite`, opacity: 0,
+            }} />
+          ))}
+        </div>
         <div className="container" style={{ position: 'relative' }}>
           <div style={{
             fontSize: '11px', fontWeight: 700, letterSpacing: '3px',
@@ -99,6 +118,12 @@ export default function Footer() {
           @keyframes footerGlow {
             0%, 100% { opacity: 0.7; transform: translate(-50%, -50%) scale(1); }
             50%      { opacity: 1;   transform: translate(-50%, -50%) scale(1.08); }
+          }
+          @keyframes floatUp {
+            0%   { transform: translateY(0) scale(0.6);    opacity: 0; }
+            12%  { opacity: 0.75; }
+            85%  { opacity: 0.45; }
+            100% { transform: translateY(-320px) scale(1); opacity: 0; }
           }
         `}</style>
       </a>
