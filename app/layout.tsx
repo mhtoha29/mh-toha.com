@@ -20,9 +20,9 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'MH-TOHA — Full-Stack Developer & Digital Builder',
+  title: 'MH-TOHA - Full-Stack Developer & Digital Builder',
   description:
-    'Mahmudul Hasan Toha — Full-Stack Web Developer, AI Integration Engineer, and CEO of TEX-IT. Building world-class digital products from Dhaka, Bangladesh.',
+    'Mahmudul Hasan Toha - Full-Stack Web Developer, AI Integration Engineer, and CEO of TEX-IT. Building world-class digital products from Dhaka, Bangladesh.',
   keywords: ['MH-TOHA', 'Next.js Developer', 'React Developer', 'Three.js', 'AI Integration', 'Web Developer Bangladesh', 'Full Stack Developer'],
   authors: [{ name: 'Mahmudul Hasan Toha', url: 'https://mh-toha.com' }],
   creator: 'Mahmudul Hasan Toha',
@@ -30,15 +30,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: 'https://mh-toha.com',
-    title: 'MH-TOHA — Full-Stack Developer & Digital Builder',
-    description: 'Engineering precision, developer\'s craft — 5+ years delivering for global clients.',
+    title: 'MH-TOHA - Full-Stack Developer & Digital Builder',
+    description: 'Engineering precision, developer\'s craft - 5+ years delivering for global clients.',
     siteName: 'MH-TOHA Portfolio',
     images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'MH-TOHA Portfolio' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'MH-TOHA — Full-Stack Developer',
-    description: 'Engineering precision, developer\'s craft — 5+ years delivering for global clients.',
+    title: 'MH-TOHA - Full-Stack Developer',
+    description: 'Engineering precision, developer\'s craft - 5+ years delivering for global clients.',
     images: ['/og-image.png'],
   },
 };

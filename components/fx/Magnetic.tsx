@@ -1,7 +1,7 @@
 'use client';
 import { useRef, type ReactNode } from 'react';
 
-// Magnetic wrapper — child drifts toward the cursor, springs back on leave.
+// Magnetic wrapper - child drifts toward the cursor, springs back on leave.
 export default function Magnetic({ children, strength = 0.35 }: { children: ReactNode; strength?: number }) {
   const ref = useRef<HTMLSpanElement>(null);
 

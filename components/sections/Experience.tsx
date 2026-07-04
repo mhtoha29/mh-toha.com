@@ -2,8 +2,8 @@
 import { useEffect, useRef, useState } from 'react';
 
 const EDUCATION = [
-  { period: '2014–2018', role: 'Diploma — Shipbuilding Technology',          org: 'Institute of Marine Technology, Sirajganj', color: 'var(--sky)',      cgpa: 'Diploma' },
-  { period: '2019–2023', role: 'BSc — Mechanical Engineering',               org: 'Sonargaon University (SU)',                  color: 'var(--sky)',      cgpa: 'BSc' },
+  { period: '2014–2018', role: 'Diploma - Shipbuilding Technology',          org: 'Institute of Marine Technology, Sirajganj', color: 'var(--sky)',      cgpa: 'Diploma' },
+  { period: '2019–2023', role: 'BSc - Mechanical Engineering',               org: 'Sonargaon University (SU)',                  color: 'var(--sky)',      cgpa: 'BSc' },
   { period: '2021–2022', role: 'Web Design & Development',                   org: 'VCAMPUS BD Training Institute',              color: 'var(--electric)', cgpa: 'Certified' },
   { period: '2023–2024', role: 'Machine Learning with Python',               org: 'BUET',                                       color: 'var(--violet)',   cgpa: 'Certified' },
   { period: '2024',      role: 'AutoCAD Professional',                       org: 'CADD CORE',                                  color: 'var(--cyan)',     cgpa: 'Certified' },
@@ -12,8 +12,8 @@ const EDUCATION = [
 
 const WORK = [
   { period: '2022–2024', role: 'Research Assistant (R&D)',       org: 'The Institution of Engineers, Bangladesh (IEB)', color: 'var(--electric)' },
-  { period: '2024 — now', role: 'CEO',                           org: 'TEX-IT & BYV Tech Agency',                       color: 'var(--emerald)' },
-  { period: '2025 — now', role: 'Business Development Manager',  org: 'Apparel Horizon Ltd',                            color: 'var(--cyan)' },
+  { period: '2024 - now', role: 'CEO',                           org: 'TEX-IT & BYV Tech Agency',                       color: 'var(--emerald)' },
+  { period: '2025 - now', role: 'Business Development Manager',  org: 'Apparel Horizon Ltd',                            color: 'var(--cyan)' },
 ];
 
 const CERTS = ['Machine Learning · BUET', 'AutoCAD · CADD CORE', 'Web Design & Dev · VCAMPUS BD', 'AI Software Engineering · ICT Bangladesh', 'Shipbuilding Tech · Marine Technology Institute'];
@@ -47,7 +47,7 @@ export default function Experience() {
           opacity: vis ? 1 : 0, transform: vis ? 'none' : 'translateY(20px)',
           transition: 'opacity 0.7s, transform 0.7s',
         }}>
-          <span className="label" style={{ marginBottom: '12px' }}>06 — Experience</span>
+          <span className="label" style={{ marginBottom: '12px' }}>06 - Experience</span>
           <h2 className="display-lg">The journey that built this.</h2>
         </div>
 

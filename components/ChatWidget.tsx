@@ -23,7 +23,7 @@ export default function ChatWidget() {
     {
       role: 'assistant',
       content:
-        "Hi! 👋 I'm TOHA AI — trained on everything about Mahmudul Hasan Toha. Ask me about his skills, projects, services, pricing, or agencies!",
+        "Hi! 👋 I'm TOHA AI - trained on everything about Mahmudul Hasan Toha. Ask me about his skills, projects, services, pricing, or agencies!",
     },
   ]);
   const [input, setInput] = useState('');
@@ -77,7 +77,7 @@ export default function ChatWidget() {
         {
           role: 'assistant',
           content:
-            'Connection hiccup — please try again, or message Toha directly on WhatsApp: +880 1716-102136.',
+            'Connection hiccup - please try again, or message Toha directly on WhatsApp: +880 1716-102136.',
         },
       ]);
     } finally {
@@ -147,10 +147,10 @@ export default function ChatWidget() {
             transition: 'transform 0.25s ease, box-shadow 0.25s ease',
           }}
         >
-          {/* rotating conic sheen — premium glow ring */}
+          {/* rotating conic sheen - premium glow ring */}
           {!open && <span className="fab-ai-sheen" />}
 
-          {/* glossy highlight — radial so it stays contained without clipping */}
+          {/* glossy highlight - radial so it stays contained without clipping */}
           <span
             style={{
               position: 'absolute', inset: 0, borderRadius: '50%',

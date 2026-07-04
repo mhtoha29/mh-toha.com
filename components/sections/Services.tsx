@@ -9,7 +9,7 @@ const SERVICES = [
     border: 'rgba(14,165,233,0.20)',
     category: 'AI & Web',
     title: 'AI-Powered Websites & Apps',
-    desc: 'Full-stack web apps with AI built in — ChatGPT, Claude, and custom ML. Smart chatbots, intelligent features, and automation using React, Next.js & Python.',
+    desc: 'Full-stack web apps with AI built in - ChatGPT, Claude, and custom ML. Smart chatbots, intelligent features, and automation using React, Next.js & Python.',
     features: ['Next.js / React', 'ChatGPT & Claude API', 'Python ML pipelines', 'AI chatbots'],
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
@@ -26,7 +26,7 @@ const SERVICES = [
     border: 'rgba(129,140,248,0.22)',
     category: 'Enterprise',
     title: 'ERP & Business Software',
-    desc: 'Custom enterprise software built for your exact workflow — ERP systems, hospital management, employee attendance, and operations tools that replace generic software.',
+    desc: 'Custom enterprise software built for your exact workflow - ERP systems, hospital management, employee attendance, and operations tools that replace generic software.',
     features: ['ERP systems', 'Hospital management', 'Employee attendance', 'Operations software'],
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
@@ -44,7 +44,7 @@ const SERVICES = [
     border: 'rgba(34,211,238,0.20)',
     category: 'CRM',
     title: 'Custom CRM Systems',
-    desc: 'Purpose-built CRM tailored to how your team sells — lead pipelines, deal tracking, client dashboards, and automated follow-ups. No bloat, no unused features.',
+    desc: 'Purpose-built CRM tailored to how your team sells - lead pipelines, deal tracking, client dashboards, and automated follow-ups. No bloat, no unused features.',
     features: ['Lead pipelines', 'Deal & client tracking', 'Client dashboards', 'Sales automation'],
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
@@ -62,7 +62,7 @@ const SERVICES = [
     border: 'rgba(52,211,153,0.20)',
     category: 'Analytics',
     title: 'CEO Dashboards & Analytics',
-    desc: 'Executive-level visibility into your business — real-time KPI dashboards, team performance tracking, and automated reports. Make decisions from data, not guesswork.',
+    desc: 'Executive-level visibility into your business - real-time KPI dashboards, team performance tracking, and automated reports. Make decisions from data, not guesswork.',
     features: ['KPI dashboards', 'Real-time metrics', 'Team performance', 'Automated reporting'],
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
@@ -80,7 +80,7 @@ const SERVICES = [
     border: 'rgba(245,158,11,0.20)',
     category: 'Digital Presence',
     title: 'Digital Company Profile',
-    desc: 'Professional company websites and brand identity that convert visitors into clients — custom-coded or WordPress, SEO-optimised, and designed to represent your business at its best.',
+    desc: 'Professional company websites and brand identity that convert visitors into clients - custom-coded or WordPress, SEO-optimised, and designed to represent your business at its best.',
     features: ['Company websites', 'Brand identity & logo', 'WordPress & custom', 'SEO optimisation'],
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
@@ -97,7 +97,7 @@ const SERVICES = [
     border: 'rgba(99,102,241,0.20)',
     category: 'Automation',
     title: 'Workflow Automation',
-    desc: 'Eliminate manual work with Python-powered automation — data pipelines, API integrations, scheduled tasks, and smart workflows that run your business operations in the background.',
+    desc: 'Eliminate manual work with Python-powered automation - data pipelines, API integrations, scheduled tasks, and smart workflows that run your business operations in the background.',
     features: ['Python automation', 'API integrations', 'Data pipelines', 'Scheduled workflows'],
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
@@ -262,7 +262,7 @@ export default function Services() {
           opacity: vis ? 1 : 0, transform: vis ? 'none' : 'translateY(20px)',
           transition: 'opacity 0.7s, transform 0.7s',
         }}>
-          <span className="label" style={{ marginBottom: '14px', display: 'block' }}>03 — What I Deliver</span>
+          <span className="label" style={{ marginBottom: '14px', display: 'block' }}>03 - What I Deliver</span>
 
           <h2 className="display-lg" style={{ marginBottom: '10px' }}>
             Helping Founders Build
@@ -281,7 +281,7 @@ export default function Services() {
             fontSize: '15px', color: 'var(--muted)',
             maxWidth: '540px', margin: '0 auto', lineHeight: 1.75,
           }}>
-            AI, websites, automation, and custom software — everything a growing business
+            AI, websites, automation, and custom software - everything a growing business
             needs to operate smarter, scale faster, and look world-class online.
           </p>
         </div>

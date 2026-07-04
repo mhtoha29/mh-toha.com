@@ -7,7 +7,7 @@ const SRC = {
 };
 
 // Real MH-TOHA wordmark (938×341 source). `variant` picks the recolored
-// asset for the background it sits on — navy letters for light backgrounds,
+// asset for the background it sits on - navy letters for light backgrounds,
 // white letters for dark backgrounds. The red dash stays red in both.
 export default function Logo({
   variant = 'navy',

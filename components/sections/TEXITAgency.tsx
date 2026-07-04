@@ -32,7 +32,7 @@ const BYV_SERVICES = [
 ];
 
 /* ─────────────────────────────────────────────
-   RMG background — running stitches + garment glyphs
+   RMG background - running stitches + garment glyphs
    ───────────────────────────────────────────── */
 const RMG_CURVES = [
   'M-20 66 C 110 18, 300 128, 420 72',
@@ -72,7 +72,7 @@ function RMGBackground() {
 
         <rect width="400" height="300" fill="url(#weave)" opacity="0.6" />
 
-        {/* Flowing threads — faint base + a light segment that runs along + a glowing needle head */}
+        {/* Flowing threads - faint base + a light segment that runs along + a glowing needle head */}
         {RMG_CURVES.map((d, i) => (
           <g key={i}>
             <path d={d} fill="none" stroke="rgba(56,189,248,0.16)" strokeWidth="1" strokeDasharray="4 5" />
@@ -87,7 +87,7 @@ function RMGBackground() {
         ))}
       </svg>
 
-      {/* Floating garment glyphs — with glow */}
+      {/* Floating garment glyphs - with glow */}
       {RMG_GLYPHS.map((g, i) => (
         <div key={i} style={{
           position: 'absolute', left: g.left, top: g.top,
@@ -139,9 +139,9 @@ function NeedleIcon() {
 }
 
 /* ─────────────────────────────────────────────
-   BYV background — rotating globe + orbiting nodes
+   BYV background - rotating globe + orbiting nodes
    ───────────────────────────────────────────── */
-// Flight-path arcs (viewBox 400×320) — global connections toward the globe
+// Flight-path arcs (viewBox 400×320) - global connections toward the globe
 const TECH_ARCS = [
   { d: 'M40 232 Q 150 70, 300 96',  dur: 3.8, color: '#22D3EE' },
   { d: 'M64 96 Q 210 30, 322 176',  dur: 4.6, color: '#818CF8' },
@@ -153,7 +153,7 @@ const TECH_ENDS = [
 ];
 
 function TechBackground() {
-  // dotted globe — precomputed meridians/latitudes rendered as dotted ellipses
+  // dotted globe - precomputed meridians/latitudes rendered as dotted ellipses
   const R = 70, CX = 292, CY = 160;
   return (
     <div aria-hidden style={{ position: 'absolute', inset: 0, overflow: 'hidden', pointerEvents: 'none', zIndex: 0 }}>
@@ -188,7 +188,7 @@ function TechBackground() {
         {/* ── Dotted rotating globe ── */}
         <g style={{ transformOrigin: `${CX}px ${CY}px`, animation: 'byvSpin 34s linear infinite' }}>
           <circle cx={CX} cy={CY} r={R} fill="url(#byvSphere)" stroke="rgba(34,211,238,0.30)" strokeWidth="1" />
-          {/* meridians (dotted) — rx animated to fake 3D rotation */}
+          {/* meridians (dotted) - rx animated to fake 3D rotation */}
           {[12, 28, 46, 62].map((rx, i) => (
             <ellipse key={`m${i}`} cx={CX} cy={CY} rx={rx} ry={R} fill="none"
               stroke="rgba(129,140,248,0.30)" strokeWidth="0.8" strokeDasharray="1.5 5">
@@ -269,7 +269,7 @@ export default function TEXITAgency() {
           opacity: vis ? 1 : 0, transform: vis ? 'none' : 'translateY(20px)',
           transition: 'opacity 0.7s, transform 0.7s',
         }}>
-          <span className="label" style={{ marginBottom: '12px' }}>07 — My Agencies</span>
+          <span className="label" style={{ marginBottom: '12px' }}>07 - My Agencies</span>
           <h2 className="display-lg" style={{ color: '#fff', marginBottom: '8px' }}>
             TEX-IT{' '}
             <span style={{ color: 'rgba(255,255,255,0.25)', fontWeight: 300 }}>&</span>{' '}
@@ -279,7 +279,7 @@ export default function TEXITAgency() {
             }}>BYV Tech</span>
           </h2>
           <p style={{ fontSize: '15px', color: 'rgba(255,255,255,0.5)', maxWidth: '540px', margin: '0 auto', lineHeight: 1.6 }}>
-            Two agencies, one mission — digital excellence for RMG Bangladesh and international AI-powered products.
+            Two agencies, one mission - digital excellence for RMG Bangladesh and international AI-powered products.
           </p>
         </div>
 
@@ -305,7 +305,7 @@ export default function TEXITAgency() {
               </div>
               <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.65)', lineHeight: 1.8, marginBottom: '24px' }}>
                 Bangladesh&apos;s 10,000+ garment factories compete for global buyers but lack the digital presence to close deals online.
-                TEX-IT is the dedicated digital transformation partner for the RMG industry — buyer-facing websites, company profiles,
+                TEX-IT is the dedicated digital transformation partner for the RMG industry - buyer-facing websites, company profiles,
                 custom software, ERP systems, and marketing campaigns that convert international interest into real orders.
               </p>
               <div className="label" style={{ marginBottom: '10px' }}>Services</div>
@@ -371,7 +371,7 @@ export default function TEXITAgency() {
                 <span style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '1.5px', color: '#22D3EE', background: 'rgba(34,211,238,0.08)', border: '1px solid rgba(34,211,238,0.2)', borderRadius: '4px', padding: '2px 8px', textTransform: 'uppercase' }}>International</span>
               </div>
               <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.65)', lineHeight: 1.8, marginBottom: '24px' }}>
-                BYV Tech is the international arm — full-stack web &amp; app development, AI-powered products, automation platforms,
+                BYV Tech is the international arm - full-stack web &amp; app development, AI-powered products, automation platforms,
                 and software solutions for global clients. Where TEX-IT serves Bangladesh&apos;s RMG sector, BYV Tech operates at
                 international standard: modern websites, web apps, AI assistants, SaaS tools, and custom software for businesses
                 that need cutting-edge technology without enterprise complexity.

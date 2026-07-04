@@ -35,7 +35,7 @@ export default function SelectedWork() {
           opacity: vis ? 1 : 0, transform: vis ? 'none' : 'translateY(20px)',
           transition: 'opacity 0.7s, transform 0.7s',
         }}>
-          <span className="label" style={{ marginBottom: '12px' }}>05 — Selected Work</span>
+          <span className="label" style={{ marginBottom: '12px' }}>05 - Selected Work</span>
           <h2 className="display-lg" style={{ color: '#fff', marginBottom: '12px' }}>Projects that ship.</h2>
           <p className="body-lg" style={{ color: 'rgba(255,255,255,0.5)' }}>
             Case studies with real results, not just screenshots.

@@ -119,7 +119,7 @@ export default function Navigation() {
         </div>
       </nav>
 
-      {/* Mobile menu overlay — premium dark */}
+      {/* Mobile menu overlay - premium dark */}
       <div style={{
         position: 'fixed', inset: 0, zIndex: 999,
         background: 'linear-gradient(165deg, #06081C 0%, #0A1230 55%, #05060F 100%)',
@@ -208,7 +208,7 @@ export default function Navigation() {
           </a>
         </nav>
 
-        {/* Footer — contact */}
+        {/* Footer - contact */}
         <div style={{
           position: 'relative', zIndex: 1, padding: '22px 32px 30px',
           maxWidth: '520px', width: '100%', margin: '0 auto',

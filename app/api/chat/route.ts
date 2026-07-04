@@ -43,11 +43,11 @@ export async function POST(req: Request) {
       // fall through to KB on API failure
     }
 
-    // Local knowledge-base fallback — instant, free, works without any key
+    // Local knowledge-base fallback - instant, free, works without any key
     return Response.json({ reply: matchKB(lastUser.content), source: 'kb' });
   } catch {
     return Response.json(
-      { reply: 'Something went wrong on my end — please try again, or reach Toha directly on WhatsApp: +880 1716-102136.', source: 'error' },
+      { reply: 'Something went wrong on my end - please try again, or reach Toha directly on WhatsApp: +880 1716-102136.', source: 'error' },
       { status: 200 },
     );
   }

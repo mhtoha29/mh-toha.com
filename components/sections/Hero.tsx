@@ -280,7 +280,7 @@ export default function Hero() {
       loopRunning = true;
       animate();
 
-      // Pause the render loop entirely once Hero scrolls out of view —
+      // Pause the render loop entirely once Hero scrolls out of view -
       // otherwise this WebGL scene keeps rendering at 60fps for the whole
       // session, competing with scroll/compositing on lower-end devices.
       const io = new IntersectionObserver(([entry]) => {
@@ -389,7 +389,7 @@ export default function Hero() {
             : {}),
         }}>
 
-          {/* Photo card — mobile only, scaled-down version of the desktop card (desktop renders its own larger card further below) */}
+          {/* Photo card - mobile only, scaled-down version of the desktop card (desktop renders its own larger card further below) */}
           {isMobile && (
             <div style={{
               ...delay(0),
@@ -447,7 +447,7 @@ export default function Hero() {
           </div>
 
           <p className="body-lg" style={{ ...delay(0.45), marginBottom: '36px', fontStyle: 'italic', maxWidth: '400px' }}>
-            Engineering precision, developer&apos;s craft — 5+ years delivering for global clients.
+            Engineering precision, developer&apos;s craft - 5+ years delivering for global clients.
           </p>
 
           <div style={{ ...delay(0.6), display: 'flex', gap: '14px', flexWrap: 'wrap', marginBottom: '32px', justifyContent: isMobile ? 'center' : 'flex-start' }}>
@@ -497,7 +497,7 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Photo card — desktop only */}
+        {/* Photo card - desktop only */}
         {!isMobile && (
           <div style={{
             flexShrink: 0,

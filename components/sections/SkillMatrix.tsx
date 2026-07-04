@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { TOP_SKILLS } from '@/lib/skills';
 
-// Continent outlines [lng, lat] — lat range −58 to 78
+// Continent outlines [lng, lat] - lat range −58 to 78
 const MAP: [number, number][][] = [
   // ── NORTH AMERICA ──────────────────────────────────────────────
   [[-168,62],[-145,72],[-120,74],[-80,73],[-60,72],[-52,47],[-65,44],
@@ -79,7 +79,7 @@ const CITIES = [
   { id: 'toronto',  name: 'TORONTO',   lat: 43.7,  lng: -79.4, color: '#818CF8', r: 3 },
 ] as const;
 
-// Pairs [from, to] — all route through Dhaka (0) as hub
+// Pairs [from, to] - all route through Dhaka (0) as hub
 const ARCS: [number, number][] = [
   [0,1],[0,2],[0,3],[0,4],[0,5],[0,6],[1,2],[2,6],[4,5],
 ];
@@ -244,7 +244,7 @@ export default function SkillMatrix() {
     loopRunning = true;
     frame();
 
-    // Pause the animation entirely once this canvas scrolls out of view —
+    // Pause the animation entirely once this canvas scrolls out of view -
     // otherwise it keeps drawing at 60fps for the rest of the session.
     const io = new IntersectionObserver(([entry]) => {
       isVisible = entry.isIntersecting;
@@ -287,7 +287,7 @@ export default function SkillMatrix() {
           transition: 'opacity 0.7s, transform 0.7s',
         }}>
           <span className="label" style={{ color: '#38BDF8', marginBottom: '14px', display: 'block' }}>
-            04 — Skill Matrix
+            04 - Skill Matrix
           </span>
           <h2 className="display-lg" style={{ color: '#fff', marginBottom: '14px', lineHeight: 1.05 }}>
             Connected.{' '}
@@ -302,7 +302,7 @@ export default function SkillMatrix() {
             fontSize: '14px', color: 'rgba(255,255,255,0.45)',
             maxWidth: '440px', margin: '0 auto', lineHeight: 1.75,
           }}>
-            Delivering digital solutions from Dhaka to clients across the globe —
+            Delivering digital solutions from Dhaka to clients across the globe -
             RMG supply chains, oil &amp; gas operations, personal brands, enterprise software.
           </p>
         </div>
@@ -312,7 +312,7 @@ export default function SkillMatrix() {
       <div style={{ position: 'relative', width: '100%', height: isMobile ? '280px' : '420px', marginBottom: '44px' }}>
         <canvas ref={canvasRef} style={{ width: '100%', height: '100%', display: 'block' }} />
 
-        {/* Edge vignettes — fade canvas into section bg */}
+        {/* Edge vignettes - fade canvas into section bg */}
         <div style={{
           position: 'absolute', inset: 0, pointerEvents: 'none',
           background: 'linear-gradient(90deg, #06081C 0%, transparent 7%, transparent 93%, #06081C 100%)',
@@ -323,7 +323,7 @@ export default function SkillMatrix() {
         }} />
       </div>
 
-      {/* Skill tiles — dark styled 4-col grid */}
+      {/* Skill tiles - dark styled 4-col grid */}
       <div className="container">
         <div className="rg-4" style={{ gap: '12px' }}>
           {TOP_SKILLS.map((skill, i) => (

@@ -9,7 +9,7 @@ const TESTIMONIALS = [
     initials: 'MMR',
     color: '#0EA5E9',
     quote:
-      'MH-TOHA transformed our digital presence completely. International buyers now discover us online — the website has directly contributed to new inquiries from European brands we simply couldn\'t reach before. Exceptional quality, on time, every time.',
+      'MH-TOHA transformed our digital presence completely. International buyers now discover us online - the website has directly contributed to new inquiries from European brands we simply couldn\'t reach before. Exceptional quality, on time, every time.',
   },
   {
     name: 'Shruti Chakraborty Borsha',
@@ -36,7 +36,7 @@ const TESTIMONIALS = [
     initials: 'MHA',
     color: '#F59E0B',
     quote:
-      'Exceptional work quality and communication throughout. TOHA delivered exactly what we envisioned — a professional digital profile that represents our manufacturing capabilities to global fashion brands. Our buyer confidence has improved significantly.',
+      'Exceptional work quality and communication throughout. TOHA delivered exactly what we envisioned - a professional digital profile that represents our manufacturing capabilities to global fashion brands. Our buyer confidence has improved significantly.',
   },
   {
     name: 'Ibrahim Bin Jalawi Al Subaie',
@@ -169,7 +169,7 @@ export default function Testimonials() {
               userSelect: 'none',
             }}>"</div>
 
-            {/* Content — animated */}
+            {/* Content - animated */}
             <div style={{
               opacity: anim ? 0 : 1,
               transform: `translateX(${anim ? slideOut : 0}px)`,

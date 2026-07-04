@@ -281,7 +281,7 @@ export default function ClientLogos() {
           <span className="label" style={{ display: 'block', marginBottom: '12px' }}>Trusted By</span>
           <h2 className="display-md" style={{ marginBottom: '12px' }}>25+ Brands &amp; Projects</h2>
           <p style={{ fontSize: '14px', color: 'var(--muted)', maxWidth: '520px', margin: '0 auto', lineHeight: 1.7 }}>
-            From Bangladesh RMG factories to oil &amp; gas rigs, mining operations to personal brands —
+            From Bangladesh RMG factories to oil &amp; gas rigs, mining operations to personal brands -
             complete digital solutions, delivered.
           </p>
 
@@ -302,7 +302,7 @@ export default function ClientLogos() {
           </div>
         </div>
 
-        {/* All clients — 4 per row */}
+        {/* All clients - 4 per row */}
         <div className="client-grid">
           {CLIENTS.map((c, i) => (
             <ClientCard key={i} client={c} />

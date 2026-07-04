@@ -97,16 +97,16 @@ export default function Contact() {
             </span>
           </div>
 
-          <span className="label" style={{ marginBottom: '12px', display: 'block' }}>09 — Contact</span>
+          <span className="label" style={{ marginBottom: '12px', display: 'block' }}>09 - Contact</span>
           <h2 className="display-lg" style={{ color: '#fff', marginBottom: '12px' }}>Let&apos;s build something great.</h2>
           <p className="body-lg" style={{ color: 'rgba(255,255,255,0.5)' }}>
-            Based in Dhaka, Bangladesh — available globally.
+            Based in Dhaka, Bangladesh - available globally.
           </p>
         </div>
 
         <div className="rg-2" style={{ gap: '64px', alignItems: 'start' }}>
 
-          {/* LEFT — Info */}
+          {/* LEFT - Info */}
           <div style={{
             opacity: vis ? 1 : 0, transform: vis ? 'none' : 'translateX(-24px)',
             transition: 'opacity 0.8s 0.15s, transform 0.8s 0.15s',
@@ -148,7 +148,7 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* RIGHT — Form */}
+          {/* RIGHT - Form */}
           <div style={{
             opacity: vis ? 1 : 0, transform: vis ? 'none' : 'translateX(24px)',
             transition: 'opacity 0.8s 0.2s, transform 0.8s 0.2s',

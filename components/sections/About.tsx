@@ -122,7 +122,7 @@ function GearPanel({ vis }: { vis: boolean }) {
           <rect width="380" height="270" fill="url(#aboutGrid)" />
           <circle cx="155" cy="138" r="100" fill="url(#gearGlow)" />
 
-          {/* Big gear — sky blue */}
+          {/* Big gear - sky blue */}
           <g className="g-big">
             <path d={gearPath(86, 70, 18)} transform="translate(155 138)"
               fill="none" stroke="#38BDF8" strokeWidth="1.6" opacity="0.62" />
@@ -138,7 +138,7 @@ function GearPanel({ vis }: { vis: boolean }) {
             <line x1="155" y1="170" x2="155" y2="238" stroke="#38BDF8" strokeWidth="0.5" opacity="0.28" />
           </g>
 
-          {/* Medium gear — violet */}
+          {/* Medium gear - violet */}
           <g className="g-med">
             <path d={gearPath(53, 42, 11)} transform="translate(290 84)"
               fill="none" stroke="#818CF8" strokeWidth="1.5" opacity="0.58" />
@@ -150,7 +150,7 @@ function GearPanel({ vis }: { vis: boolean }) {
             ))}
           </g>
 
-          {/* Small gear — cyan */}
+          {/* Small gear - cyan */}
           <g className="g-sm">
             <path d={gearPath(37, 28, 8)} transform="translate(68 228)"
               fill="none" stroke="#22D3EE" strokeWidth="1.4" opacity="0.52" />
@@ -158,7 +158,7 @@ function GearPanel({ vis }: { vis: boolean }) {
             <circle cx="68" cy="228" r="3.5" fill="rgba(34,211,238,0.12)" stroke="#22D3EE" strokeWidth="1.5" opacity="0.52" />
           </g>
 
-          {/* Tiny gear — emerald */}
+          {/* Tiny gear - emerald */}
           <g className="g-xs">
             <path d={gearPath(23, 18, 6)} transform="translate(325 196)"
               fill="none" stroke="#34D399" strokeWidth="1.4" opacity="0.48" />
@@ -253,7 +253,7 @@ export default function About() {
         }} />
       </div>
 
-      {/* Blueprint grid — very subtle on dark */}
+      {/* Blueprint grid - very subtle on dark */}
       <div className="blueprint-bg" style={{ position: 'absolute', inset: 0, opacity: 0.07, pointerEvents: 'none' }} />
 
       <div className="sec-number" style={{ color: 'rgba(56,189,248,0.05)' }}>02</div>
@@ -261,10 +261,10 @@ export default function About() {
       <div className="container" ref={ref}>
         <div className="rg-2-l" style={{ alignItems: 'start' }}>
 
-          {/* LEFT — Gear Panel */}
+          {/* LEFT - Gear Panel */}
           <GearPanel vis={vis} />
 
-          {/* RIGHT — Content */}
+          {/* RIGHT - Content */}
           <div style={{ paddingTop: '4px' }}>
 
             {/* Label + Heading */}
@@ -274,7 +274,7 @@ export default function About() {
                 fontSize: '11px', fontWeight: 700, letterSpacing: '3px',
                 textTransform: 'uppercase', color: '#38BDF8',
               }}>
-                02 — About
+                02 - About
               </span>
               <h2 style={{
                 fontSize: 'clamp(32px, 4.2vw, 56px)',
@@ -293,7 +293,7 @@ export default function About() {
             {/* Bio */}
             <div style={stagger(1)}>
               <p style={{ fontSize: 'clamp(15px,1.2vw,17px)', lineHeight: 1.85, color: 'rgba(255,255,255,0.68)', marginBottom: '18px' }}>
-                I believe engineering is more than a profession — it&apos;s a way of thinking. An engineer is an
+                I believe engineering is more than a profession - it&apos;s a way of thinking. An engineer is an
                 innovator, a creator, and a problem solver who turns complexity into simple, scalable systems.
                 My passion is transforming ideas into reality by combining modern technology, AI, and thoughtful
                 design to build solutions that create real impact.
@@ -306,7 +306,7 @@ export default function About() {
               </p>
               <p style={{ fontSize: 'clamp(15px,1.2vw,17px)', lineHeight: 1.85, color: 'rgba(255,255,255,0.68)', marginBottom: '38px' }}>
                 More than writing code, I enjoy bringing people&apos;s visions to life. I build systems that solve
-                problems, simplify work, and create freedom — because great technology should empower people,
+                problems, simplify work, and create freedom - because great technology should empower people,
                 not complicate their lives.
               </p>
             </div>

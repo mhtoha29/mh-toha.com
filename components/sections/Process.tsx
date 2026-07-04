@@ -4,13 +4,13 @@ import { useEffect, useRef, useState, useCallback } from 'react';
 const STEPS = [
   { num: '01', title: 'Discover',  color: '#0EA5E9', icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>, desc: 'Goals, audience, KPIs. Engineering mindset: understand the system first.' },
   { num: '02', title: 'Design',    color: '#06B6D4', icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>, desc: 'Wireframes to final UI. No templates, every decision justified.' },
-  { num: '03', title: 'Build',     color: '#3B82F6', icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>, desc: 'Next.js, Python, APIs — clean code, weekly updates.' },
+  { num: '03', title: 'Build',     color: '#3B82F6', icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>, desc: 'Next.js, Python, APIs - clean code, weekly updates.' },
   { num: '04', title: 'Refine',    color: '#6366F1', icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>, desc: 'Two revision rounds. Mobile-perfect. 90+ Lighthouse score.' },
   { num: '05', title: 'Deploy',    color: '#10B981', icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>, desc: 'Vercel deploy, domain, analytics. 30-day post-launch support.' },
 ];
 
 const VIDEOS = [
-  { id: 'ga1EAPlWciQ', title: 'Project Showcase — Full Walkthrough' },
+  { id: 'ga1EAPlWciQ', title: 'Project Showcase - Full Walkthrough' },
   { id: 'gp32YB0ggtM', title: 'Agency & Portfolio Overview' },
   { id: 'CRyHggCN-Fs', title: 'Client Website Demo' },
   { id: 'uewnO_ijzn8', title: 'Development Process Walkthrough' },
@@ -66,7 +66,7 @@ export default function Process() {
           opacity: vis ? 1 : 0, transform: vis ? 'none' : 'translateY(20px)',
           transition: 'opacity 0.7s, transform 0.7s',
         }}>
-          <span className="label" style={{ marginBottom: '14px', display: 'block' }}>09 — Process & Proof</span>
+          <span className="label" style={{ marginBottom: '14px', display: 'block' }}>09 - Process & Proof</span>
           <h2 className="display-lg" style={{ marginBottom: '14px' }}>
             How I work.{' '}
             <span style={{
@@ -75,7 +75,7 @@ export default function Process() {
             }}>See it in motion.</span>
           </h2>
           <p style={{ fontSize: '15px', color: 'var(--muted)', maxWidth: '480px', margin: '0 auto', lineHeight: 1.7 }}>
-            A five-step process refined across 40+ projects — demonstrated by real work, not just words.
+            A five-step process refined across 40+ projects - demonstrated by real work, not just words.
           </p>
         </div>
 

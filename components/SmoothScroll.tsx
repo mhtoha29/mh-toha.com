@@ -6,7 +6,7 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
   const lenisRef = useRef<Lenis | null>(null);
 
   useEffect(() => {
-    // Native touch scrolling already feels right on phones — Lenis's JS-driven
+    // Native touch scrolling already feels right on phones - Lenis's JS-driven
     // easing only adds overhead and jank there, so it's desktop/mouse-only.
     const isMobile = window.matchMedia('(pointer: coarse)').matches || window.innerWidth < 768;
     if (isMobile) return;
