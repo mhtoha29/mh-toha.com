@@ -62,7 +62,7 @@ BYV Tech - international arm. Full-stack web & app development, AI automation, c
 3. IBJ - oil & gas industrial corporate site. Live: binjalawi.com
 4. ABJ Apparel - RMG buying house buyer-facing site. Live: apparel.binjalawi.com
 5. Verdant Source - eco-conscious textile sourcing brand. Live: verdant.binjalawi.com
-6. NICU Smart Billing System - offline-first Python + SQLite hospital billing app, deployed in a hospital NICU; bills generated in under 60 seconds.
+6. NICU Smart Billing System - offline-first Python + SQLite billing & patient management app, deployed at Mahabubur Rahman Memorial Hospital (NICU); handles patient records, daily charges, medicine tracking, auto-generated bills in under 60 seconds.
 
 === NOTABLE CLIENTS (25+ brands) ===
 RMG: ABJ Apparel, Verdant Source, Texora, Fusion Tex Global, Apparel Horizon, Time Sourcing Intl, BD Apparel, Vertex Sourcing, Iconic Apparel, Orijin Apparel, Nexora Apparel, NT Apparel, Upoma Knit Fashion
@@ -149,7 +149,7 @@ export const KB: KBEntry[] = [
   },
   {
     keys: ['nicu', 'offline app'],
-    answer: "The NICU Smart Billing System is an offline-first desktop app (Python + SQLite) deployed in a hospital NICU. It auto-calculates daily bed charges, medicine usage, and procedure fees - staff generate accurate bills in under 60 seconds. 100% offline, zero errors. Watch the video demo in the Selected Work section!",
+    answer: "The NICU Smart Billing System is an offline-first desktop app (Python + SQLite) deployed at Mahabubur Rahman Memorial Hospital (NICU). It manages patient records, medicine tracking, and auto-calculates daily bed charges & procedure fees - staff generate accurate bills in under 60 seconds. 100% offline, zero errors. Watch the video demo in the Selected Work section!",
   },
 ];
 
