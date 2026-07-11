@@ -112,10 +112,10 @@ function GearPanel({ vis }: { vis: boolean }) {
 
           <defs>
             <pattern id="aboutGrid" width="18" height="18" patternUnits="userSpaceOnUse">
-              <path d="M 18 0 L 0 0 0 18" fill="none" stroke="rgba(56,189,248,0.06)" strokeWidth="0.5" />
+              <path d="M 18 0 L 0 0 0 18" fill="none" stroke="rgba(56,189,248,0.11)" strokeWidth="0.5" />
             </pattern>
             <radialGradient id="gearGlow" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stopColor="#38BDF8" stopOpacity="0.08" />
+              <stop offset="0%" stopColor="#38BDF8" stopOpacity="0.18" />
               <stop offset="100%" stopColor="#38BDF8" stopOpacity="0" />
             </radialGradient>
           </defs>
@@ -125,54 +125,54 @@ function GearPanel({ vis }: { vis: boolean }) {
           {/* Big gear - sky blue */}
           <g className="g-big">
             <path d={gearPath(86, 70, 18)} transform="translate(155 138)"
-              fill="none" stroke="#38BDF8" strokeWidth="1.6" opacity="0.62" />
-            <circle cx="155" cy="138" r="26" fill="none" stroke="#38BDF8" strokeWidth="0.8" opacity="0.4" />
-            <circle cx="155" cy="138" r="10" fill="rgba(56,189,248,0.12)" stroke="#38BDF8" strokeWidth="1.8" opacity="0.7" />
+              fill="none" stroke="#38BDF8" strokeWidth="2" opacity="0.88" />
+            <circle cx="155" cy="138" r="26" fill="none" stroke="#38BDF8" strokeWidth="0.8" opacity="0.66" />
+            <circle cx="155" cy="138" r="10" fill="rgba(56,189,248,0.12)" stroke="#38BDF8" strokeWidth="1.8" opacity="0.92" />
             {BIG_HOLES.map(({ cx, cy }, i) => (
               <circle key={i} cx={cx} cy={cy}
-                r="4.5" fill="rgba(56,189,248,0.12)" stroke="#38BDF8" strokeWidth="1" opacity="0.55" />
+                r="4.5" fill="rgba(56,189,248,0.12)" stroke="#38BDF8" strokeWidth="1" opacity="0.8" />
             ))}
-            <line x1="56" y1="138" x2="118" y2="138" stroke="#38BDF8" strokeWidth="0.5" opacity="0.28" />
-            <line x1="192" y1="138" x2="255" y2="138" stroke="#38BDF8" strokeWidth="0.5" opacity="0.28" />
-            <line x1="155" y1="52" x2="155" y2="106" stroke="#38BDF8" strokeWidth="0.5" opacity="0.28" />
-            <line x1="155" y1="170" x2="155" y2="238" stroke="#38BDF8" strokeWidth="0.5" opacity="0.28" />
+            <line x1="56" y1="138" x2="118" y2="138" stroke="#38BDF8" strokeWidth="0.5" opacity="0.52" />
+            <line x1="192" y1="138" x2="255" y2="138" stroke="#38BDF8" strokeWidth="0.5" opacity="0.52" />
+            <line x1="155" y1="52" x2="155" y2="106" stroke="#38BDF8" strokeWidth="0.5" opacity="0.52" />
+            <line x1="155" y1="170" x2="155" y2="238" stroke="#38BDF8" strokeWidth="0.5" opacity="0.52" />
           </g>
 
           {/* Medium gear - violet */}
           <g className="g-med">
             <path d={gearPath(53, 42, 11)} transform="translate(290 84)"
-              fill="none" stroke="#818CF8" strokeWidth="1.5" opacity="0.58" />
-            <circle cx="290" cy="84" r="16" fill="none" stroke="#818CF8" strokeWidth="0.8" opacity="0.35" />
-            <circle cx="290" cy="84" r="5.5" fill="rgba(129,140,248,0.12)" stroke="#818CF8" strokeWidth="1.6" opacity="0.6" />
+              fill="none" stroke="#818CF8" strokeWidth="1.9" opacity="0.84" />
+            <circle cx="290" cy="84" r="16" fill="none" stroke="#818CF8" strokeWidth="0.8" opacity="0.6" />
+            <circle cx="290" cy="84" r="5.5" fill="rgba(129,140,248,0.12)" stroke="#818CF8" strokeWidth="2" opacity="0.85" />
             {MED_HOLES.map(({ cx, cy }, i) => (
               <circle key={i} cx={cx} cy={cy}
-                r="3.5" fill="rgba(129,140,248,0.1)" stroke="#818CF8" strokeWidth="1" opacity="0.45" />
+                r="3.5" fill="rgba(129,140,248,0.1)" stroke="#818CF8" strokeWidth="1" opacity="0.7" />
             ))}
           </g>
 
           {/* Small gear - cyan */}
           <g className="g-sm">
             <path d={gearPath(37, 28, 8)} transform="translate(68 228)"
-              fill="none" stroke="#22D3EE" strokeWidth="1.4" opacity="0.52" />
-            <circle cx="68" cy="228" r="11" fill="none" stroke="#22D3EE" strokeWidth="0.8" opacity="0.32" />
-            <circle cx="68" cy="228" r="3.5" fill="rgba(34,211,238,0.12)" stroke="#22D3EE" strokeWidth="1.5" opacity="0.52" />
+              fill="none" stroke="#22D3EE" strokeWidth="1.8" opacity="0.78" />
+            <circle cx="68" cy="228" r="11" fill="none" stroke="#22D3EE" strokeWidth="0.8" opacity="0.56" />
+            <circle cx="68" cy="228" r="3.5" fill="rgba(34,211,238,0.12)" stroke="#22D3EE" strokeWidth="1.9" opacity="0.78" />
           </g>
 
           {/* Tiny gear - emerald */}
           <g className="g-xs">
             <path d={gearPath(23, 18, 6)} transform="translate(325 196)"
-              fill="none" stroke="#34D399" strokeWidth="1.4" opacity="0.48" />
-            <circle cx="325" cy="196" r="7" fill="none" stroke="#34D399" strokeWidth="0.8" opacity="0.28" />
-            <circle cx="325" cy="196" r="2.5" fill="rgba(52,211,153,0.1)" stroke="#34D399" strokeWidth="1.4" opacity="0.48" />
+              fill="none" stroke="#34D399" strokeWidth="1.8" opacity="0.74" />
+            <circle cx="325" cy="196" r="7" fill="none" stroke="#34D399" strokeWidth="0.8" opacity="0.52" />
+            <circle cx="325" cy="196" r="2.5" fill="rgba(52,211,153,0.1)" stroke="#34D399" strokeWidth="1.8" opacity="0.74" />
           </g>
 
           {/* Connection dashes */}
           <line x1="155" y1="138" x2="290" y2="84"
-            stroke="rgba(56,189,248,0.15)" strokeWidth="0.8" strokeDasharray="5 5" />
+            stroke="rgba(56,189,248,0.3)" strokeWidth="0.8" strokeDasharray="5 5" />
 
           {/* Technical annotations */}
-          <text x="18" y="22" fill="rgba(56,189,248,0.4)" fontSize="7" fontFamily="monospace">N=18T · m=1.5</text>
-          <text x="18" y="32" fill="rgba(56,189,248,0.4)" fontSize="7" fontFamily="monospace">ω=2π/26s · CW</text>
+          <text x="18" y="22" fill="rgba(56,189,248,0.62)" fontSize="7" fontFamily="monospace">N=18T · m=1.5</text>
+          <text x="18" y="32" fill="rgba(56,189,248,0.62)" fontSize="7" fontFamily="monospace">ω=2π/26s · CW</text>
           <text x="220" y="260" fill="rgba(129,140,248,0.4)" fontSize="7" fontFamily="monospace">REV=16s · CCW</text>
         </svg>
       </div>
