@@ -162,7 +162,7 @@ export default function SelectedWork() {
 
                 {/* Tech stack */}
                 <div style={{ marginBottom: '28px' }}>
-                  <div style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '2px', color: 'var(--muted)', marginBottom: '8px', textTransform: 'uppercase' }}>Tech Stack</div>
+                  <div style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '2px', color: 'rgba(255,255,255,0.62)', marginBottom: '8px', textTransform: 'uppercase' }}>Tech Stack</div>
                   <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
                     {modal.tech.map((t, i) => <span key={i} className="chip chip-sky">{t}</span>)}
                   </div>
