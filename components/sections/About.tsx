@@ -292,19 +292,19 @@ export default function About() {
 
             {/* Bio */}
             <div style={stagger(1)}>
-              <p style={{ fontSize: 'clamp(15px,1.2vw,17px)', lineHeight: 1.85, color: 'rgba(255,255,255,0.68)', marginBottom: '18px' }}>
+              <p style={{ fontSize: 'clamp(15px,1.2vw,17px)', lineHeight: 1.85, color: 'rgba(255,255,255,0.85)', marginBottom: '18px' }}>
                 I believe engineering is more than a profession - it&apos;s a way of thinking. An engineer is an
                 innovator, a creator, and a problem solver who turns complexity into simple, scalable systems.
                 My passion is transforming ideas into reality by combining modern technology, AI, and thoughtful
                 design to build solutions that create real impact.
               </p>
-              <p style={{ fontSize: 'clamp(15px,1.2vw,17px)', lineHeight: 1.85, color: 'rgba(255,255,255,0.68)', marginBottom: '18px' }}>
+              <p style={{ fontSize: 'clamp(15px,1.2vw,17px)', lineHeight: 1.85, color: 'rgba(255,255,255,0.85)', marginBottom: '18px' }}>
                 I don&apos;t believe in one-size-fits-all solutions or copied templates. Every business has unique
                 challenges, and every solution should be built with purpose. Whether it&apos;s a high-performance
                 website, a custom platform, or an AI-powered system, I focus on creating products that are
                 reliable, scalable, and built to last.
               </p>
-              <p style={{ fontSize: 'clamp(15px,1.2vw,17px)', lineHeight: 1.85, color: 'rgba(255,255,255,0.68)', marginBottom: '38px' }}>
+              <p style={{ fontSize: 'clamp(15px,1.2vw,17px)', lineHeight: 1.85, color: 'rgba(255,255,255,0.85)', marginBottom: '38px' }}>
                 More than writing code, I enjoy bringing people&apos;s visions to life. I build systems that solve
                 problems, simplify work, and create freedom - because great technology should empower people,
                 not complicate their lives.
@@ -339,7 +339,7 @@ export default function About() {
                   }}>
                     {vis ? <CountUp target={stat.n} suffix={stat.s} inView={vis} /> : `0${stat.s}`}
                   </div>
-                  <div style={{ fontSize: '11.5px', color: 'rgba(255,255,255,0.4)', letterSpacing: '1.5px', textTransform: 'uppercase' }}>
+                  <div style={{ fontSize: '11.5px', color: 'rgba(255,255,255,0.62)', letterSpacing: '1.5px', textTransform: 'uppercase' }}>
                     {stat.l}
                   </div>
                 </div>

@@ -237,7 +237,7 @@ export default function Testimonials() {
                 width: '44px', height: '44px', borderRadius: '50%',
                 background: 'rgba(255,255,255,0.06)',
                 border: '1px solid rgba(255,255,255,0.12)',
-                color: 'rgba(255,255,255,0.6)',
+                color: 'rgba(255,255,255,0.78)',
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                 cursor: 'none', transition: 'background 0.2s, border-color 0.2s',
               }}
@@ -278,7 +278,7 @@ export default function Testimonials() {
                 width: '44px', height: '44px', borderRadius: '50%',
                 background: 'rgba(255,255,255,0.06)',
                 border: '1px solid rgba(255,255,255,0.12)',
-                color: 'rgba(255,255,255,0.6)',
+                color: 'rgba(255,255,255,0.78)',
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                 cursor: 'none', transition: 'background 0.2s',
               }}

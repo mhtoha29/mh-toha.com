@@ -38,7 +38,7 @@ export default function Starfield({ opacity = 1 }: { opacity?: number }) {
             background: st.bright ? 'rgba(186,230,253,0.95)' : 'rgba(255,255,255,0.75)',
             boxShadow: st.bright
               ? `0 0 ${st.s * 4}px rgba(56,189,248,0.8)`
-              : `0 0 ${st.s * 2}px rgba(255,255,255,0.4)`,
+              : `0 0 ${st.s * 2}px rgba(255,255,255,0.62)`,
             animation: `twinkle ${st.dur}s ease-in-out ${st.delay}s infinite`,
           }}
         />

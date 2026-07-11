@@ -62,7 +62,7 @@ export default function Hero() {
     return () => window.removeEventListener('mousemove', fn);
   }, []);
 
-  // Three.js: AI neural network
+  // Three.js: 3D world globe — Bangladesh HQ → global connections
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -77,8 +77,8 @@ export default function Hero() {
       const W = canvas.offsetWidth || window.innerWidth;
       const H = canvas.offsetHeight || window.innerHeight;
       const scene = new THREE.Scene();
-      const camera = new THREE.PerspectiveCamera(55, W / H, 0.1, 200);
-      camera.position.set(0, 0, 20);
+      const camera = new THREE.PerspectiveCamera(52, W / H, 0.1, 200);
+      camera.position.set(0, 0, 18);
 
       const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
       renderer.setSize(W, H);
@@ -90,187 +90,197 @@ export default function Hero() {
       const group = new THREE.Group();
       scene.add(group);
 
-      // ── Orbital rings (rotate independently in scene) ──
-      const makeCircle = (r: number, seg: number) => {
-        const pts: THREE.Vector3[] = [];
-        for (let i = 0; i <= seg; i++) {
-          const a = (i / seg) * Math.PI * 2;
-          pts.push(new THREE.Vector3(Math.cos(a) * r, Math.sin(a) * r, 0));
-        }
-        return new THREE.BufferGeometry().setFromPoints(pts);
-      };
+      const R = isMobile ? 4.5 : 5.5;
 
-      type RingEntry = { line: THREE.Line; ry: number; rz: number; rx: number };
-      const ringEntries: RingEntry[] = [];
-
-      if (!isMobile) {
-        const add = (r: number, seg: number, col: number, op: number,
-          rx: number, ry: number, rz: number,
-          dRy: number, dRz: number, dRx: number) => {
-          const g = makeCircle(r, seg); allGeos.push(g);
-          const m = new THREE.LineBasicMaterial({ color: col, transparent: true, opacity: op }); allMats.push(m);
-          const l = new THREE.Line(g, m);
-          l.rotation.x = rx; l.rotation.y = ry; l.rotation.z = rz;
-          scene.add(l);
-          ringEntries.push({ line: l, ry: dRy, rz: dRz, rx: dRx });
-        };
-        add(10,  140, 0x0EA5E9, 0.13, Math.PI * 0.28, 0,            Math.PI * 0.08, 0,      0.0010, 0);
-        add(14.5,180, 0x7C3AED, 0.07, Math.PI * 0.55, Math.PI*0.18, 0,              0.0007, 0,      0);
-        add(7,   100, 0x06B6D4, 0.10, Math.PI * 0.42, 0,           -Math.PI * 0.12, 0,      0.0008, 0.0015);
-      }
-
-      // ── Neural network nodes ──
-      const hubCount   = isMobile ? 3 : 6;
-      const midCount   = isMobile ? 10 : 20;
-      const smallCount = isMobile ? 12 : 24;
-      const total = hubCount + midCount + smallCount;
-
-      type NodeData = {
-        mesh: THREE.Mesh;
-        aura: THREE.Mesh | null;
-        basePos: THREE.Vector3;
-        phase: number;
-        phaseSpeed: number;
-      };
-      const nodes: NodeData[] = [];
-
-      for (let i = 0; i < total; i++) {
-        const isHub = i < hubCount;
-        const isMid = !isHub && i < hubCount + midCount;
-        const sx = isMobile ? 13 : 19;
-        const sy = isMobile ? 9 : 11;
-        // slight right bias: x center = +0.3*sx*0.3 ≈ +2
-        const x = (Math.random() - 0.28) * sx;
-        const y = (Math.random() - 0.5) * sy;
-        const z = (Math.random() - 0.5) * 7;
-
-        const geo = new THREE.SphereGeometry(
-          isHub ? 0.22 : isMid ? 0.115 : 0.065,
-          isHub ? 10 : 6, isHub ? 10 : 6,
+      // lat/lon → sphere surface point
+      const ll2v = (lat: number, lon: number, r = R) => {
+        const phi   = (90 - lat) * Math.PI / 180;
+        const theta = (lon + 180) * Math.PI / 180;
+        return new THREE.Vector3(
+          -r * Math.sin(phi) * Math.cos(theta),
+           r * Math.cos(phi),
+           r * Math.sin(phi) * Math.sin(theta),
         );
-        const mat = new THREE.MeshBasicMaterial({
-          color: new THREE.Color(isHub ? '#0EA5E9' : isMid ? '#7C3AED' : '#94A3B8'),
-          transparent: true,
-          opacity: isHub ? 1 : isMid ? 0.9 : 0.68,
-        });
-        const mesh = new THREE.Mesh(geo, mat);
-        const pos = new THREE.Vector3(x, y, z);
+      };
+
+      // ── Globe: dark sphere ──
+      const sphereGeo = new THREE.SphereGeometry(R, 48, 24);
+      const sphereMat = new THREE.MeshBasicMaterial({ color: 0x040D1A, transparent: true, opacity: 0.6 });
+      allGeos.push(sphereGeo); allMats.push(sphereMat);
+      group.add(new THREE.Mesh(sphereGeo, sphereMat));
+
+      // ── Globe: lat/lon wireframe ──
+      const wGeo = new THREE.SphereGeometry(R * 1.001, 28, 14);
+      const wMat = new THREE.LineBasicMaterial({ color: 0x0EA5E9, transparent: true, opacity: 0.11 });
+      allGeos.push(wGeo); allMats.push(wMat);
+      group.add(new THREE.LineSegments(new THREE.WireframeGeometry(wGeo), wMat));
+
+      // ── Globe: outer glow ──
+      const glowGeo = new THREE.SphereGeometry(R * 1.06, 32, 16);
+      const glowMat = new THREE.MeshBasicMaterial({ color: 0x0EA5E9, transparent: true, opacity: 0.055, side: THREE.BackSide });
+      allGeos.push(glowGeo); allMats.push(glowMat);
+      group.add(new THREE.Mesh(glowGeo, glowMat));
+
+      // ── City definitions ──
+      const CITIES = [
+        { lat: 23.8,  lon:  90.4, isHQ: true  },
+        { lat: 38.0,  lon: -95.0, isHQ: false },
+        { lat: 51.5,  lon:  -0.1, isHQ: false },
+        { lat: 51.0,  lon:  10.0, isHQ: false },
+        { lat: 24.7,  lon:  46.7, isHQ: false },
+        { lat: 25.2,  lon:  55.3, isHQ: false },
+        { lat: -25.0, lon: 133.0, isHQ: false },
+        { lat: 35.7,  lon: 139.7, isHQ: false },
+        { lat: 56.0,  lon:-106.0, isHQ: false },
+      ];
+
+      // ── City dots ──
+      CITIES.forEach(c => {
+        const pos  = ll2v(c.lat, c.lon);
+        const size = c.isHQ ? 0.17 : 0.085;
+        const col  = c.isHQ ? 0xef4444 : 0x38BDF8;
+        const g = new THREE.SphereGeometry(size, 8, 8);
+        const m = new THREE.MeshBasicMaterial({ color: col, transparent: true, opacity: 0.95 });
+        const mesh = new THREE.Mesh(g, m);
         mesh.position.copy(pos);
         group.add(mesh);
+        allGeos.push(g); allMats.push(m);
+      });
+
+      // ── Bangladesh pulse rings ──
+      const BD_POS    = ll2v(23.8, 90.4);
+      const BD_NORMAL = BD_POS.clone().normalize();
+      type RingData = { mesh: THREE.Mesh; mat: THREE.MeshBasicMaterial; phase: number };
+      const pulseRings: RingData[] = [];
+      for (let ri = 0; ri < 3; ri++) {
+        const rg = new THREE.RingGeometry(0.22, 0.30, 32);
+        const rm = new THREE.MeshBasicMaterial({ color: 0xef4444, transparent: true, opacity: 0, side: THREE.DoubleSide });
+        const rmesh = new THREE.Mesh(rg, rm);
+        const q = new THREE.Quaternion().setFromUnitVectors(new THREE.Vector3(0, 0, 1), BD_NORMAL);
+        rmesh.setRotationFromQuaternion(q);
+        rmesh.position.copy(BD_POS.clone().multiplyScalar(1.012));
+        group.add(rmesh);
+        allGeos.push(rg); allMats.push(rm);
+        pulseRings.push({ mesh: rmesh, mat: rm, phase: ri * (Math.PI * 2 / 3) });
+      }
+
+      // ── Arc connections Bangladesh → world ──
+      const HQ      = BD_POS.clone();
+      const TARGETS = CITIES.filter(c => !c.isHQ);
+      const N_ARC   = 80;
+
+      type ArcData = {
+        line: THREE.Line;
+        mat: THREE.LineBasicMaterial;
+        geo: THREE.BufferGeometry;
+        pts: THREE.Vector3[];
+      };
+
+      const arcDatas: ArcData[] = TARGETS.map(tgt => {
+        const to  = ll2v(tgt.lat, tgt.lon);
+        const mid = new THREE.Vector3().addVectors(HQ, to).normalize().multiplyScalar(R * 1.48);
+        const pts: THREE.Vector3[] = [];
+        for (let s = 0; s <= N_ARC; s++) {
+          const t = s / N_ARC, u = 1 - t;
+          pts.push(new THREE.Vector3(
+            u*u*HQ.x + 2*u*t*mid.x + t*t*to.x,
+            u*u*HQ.y + 2*u*t*mid.y + t*t*to.y,
+            u*u*HQ.z + 2*u*t*mid.z + t*t*to.z,
+          ));
+        }
+        const geo = new THREE.BufferGeometry().setFromPoints(pts);
+        geo.setDrawRange(0, 0);
+        const mat = new THREE.LineBasicMaterial({ color: 0x38BDF8, transparent: true, opacity: 0 });
+        const line = new THREE.Line(geo, mat);
+        group.add(line);
         allGeos.push(geo); allMats.push(mat);
+        return { line, mat, geo, pts };
+      });
 
-        let aura: THREE.Mesh | null = null;
-        if (isHub) {
-          const aGeo = new THREE.SphereGeometry(0.5, 12, 12);
-          const aMat = new THREE.MeshBasicMaterial({ color: new THREE.Color('#0EA5E9'), transparent: true, opacity: 0.07 });
-          aura = new THREE.Mesh(aGeo, aMat);
-          aura.position.copy(pos);
-          group.add(aura);
-          allGeos.push(aGeo); allMats.push(aMat);
-        }
+      // ── Arc head dots (travel along arc) ──
+      const headDots = arcDatas.map(() => {
+        const g = new THREE.SphereGeometry(0.06, 6, 6);
+        const m = new THREE.MeshBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0 });
+        const mesh = new THREE.Mesh(g, m);
+        group.add(mesh);
+        allGeos.push(g); allMats.push(m);
+        return { mesh, mat: m };
+      });
 
-        nodes.push({ mesh, aura, basePos: pos.clone(), phase: Math.random() * Math.PI * 2, phaseSpeed: 0.004 + Math.random() * 0.006 });
-      }
+      // Orient globe so Bangladesh faces slightly front-right
+      group.rotation.y = -Math.PI * 0.75;
 
-      // ── Connections as single LineSegments ──
-      type EdgeData = { a: number; b: number };
-      const edgeList: EdgeData[] = [];
-      const threshold = isMobile ? 5.0 : 5.8;
+      // ── Animation state ──
+      // Phases: 0=intro-spin(2s) → 1=draw-arcs → 2=hold(3s) → 3=fade(1.5s) → 4=pause(0.3s) → back to 1
+      let phase = 0;
+      let phaseTimer = 0;
+      let currentArc = 0;
+      let arcDrawT = 0;
+      const DT = 1 / 60;
 
-      for (let a = 0; a < total; a++) {
-        for (let b = a + 1; b < total; b++) {
-          if (nodes[a].basePos.distanceTo(nodes[b].basePos) < threshold) {
-            edgeList.push({ a, b });
-          }
-        }
-      }
-
-      const edgeBuf = new Float32Array(edgeList.length * 6);
-      for (let i = 0; i < edgeList.length; i++) {
-        const pa = nodes[edgeList[i].a].mesh.position;
-        const pb = nodes[edgeList[i].b].mesh.position;
-        edgeBuf[i*6]=pa.x; edgeBuf[i*6+1]=pa.y; edgeBuf[i*6+2]=pa.z;
-        edgeBuf[i*6+3]=pb.x; edgeBuf[i*6+4]=pb.y; edgeBuf[i*6+5]=pb.z;
-      }
-      const edgeGeo = new THREE.BufferGeometry();
-      edgeGeo.setAttribute('position', new THREE.BufferAttribute(edgeBuf, 3));
-      const edgeMat = new THREE.LineBasicMaterial({ color: 0x0EA5E9, transparent: true, opacity: 0.22 });
-      group.add(new THREE.LineSegments(edgeGeo, edgeMat));
-      allGeos.push(edgeGeo); allMats.push(edgeMat);
-
-      // ── Pulse signals ──
-      const pulseCount = isMobile ? 8 : 18;
-      const pGeo = new THREE.SphereGeometry(0.07, 6, 6);
-      allGeos.push(pGeo);
-
-      type PulseData = { edgeIdx: number; progress: number; speed: number; mesh: THREE.Mesh };
-      const pulses: PulseData[] = [];
-      const tmpA = new THREE.Vector3();
-      const tmpB = new THREE.Vector3();
-
-      for (let i = 0; i < pulseCount && edgeList.length > 0; i++) {
-        const pMat = new THREE.MeshBasicMaterial({
-          color: new THREE.Color(i % 3 === 0 ? '#A78BFA' : '#38BDF8'),
-          transparent: true, opacity: 0.92,
-        });
-        allMats.push(pMat);
-        const pMesh = new THREE.Mesh(pGeo, pMat);
-        group.add(pMesh);
-        pulses.push({
-          edgeIdx: Math.floor(Math.random() * edgeList.length),
-          progress: Math.random(),
-          speed: 0.006 + Math.random() * 0.014,
-          mesh: pMesh,
-        });
-      }
-
-      // ── Animation loop (paused while Hero is scrolled out of view) ──
+      // ── Animation loop ──
       const animate = () => {
         if (!isVisible) { loopRunning = false; return; }
         rafId = requestAnimationFrame(animate);
 
-        group.rotation.y += 0.0008;
-        group.rotation.x += 0.0003;
+        phaseTimer += DT;
 
-        ringEntries.forEach(({ line, ry, rz, rx }) => {
-          line.rotation.y += ry;
-          line.rotation.z += rz;
-          line.rotation.x += rx;
+        // Continuous slow rotation
+        group.rotation.y += phase === 0 ? 0.010 : 0.0025;
+        group.rotation.x += 0.0004;
+
+        // Pulse rings — only visible in phase 1+
+        pulseRings.forEach(r => {
+          r.phase += DT * 1.1;
+          const pulse = (r.phase % (Math.PI * 2)) / (Math.PI * 2);
+          r.mesh.scale.setScalar(1 + pulse * 3.2);
+          r.mat.opacity = phase >= 1 ? (1 - pulse) * 0.65 : 0;
         });
 
-        nodes.forEach(nd => {
-          nd.phase += nd.phaseSpeed;
-          nd.mesh.position.set(
-            nd.basePos.x + Math.cos(nd.phase * 0.8) * 0.07,
-            nd.basePos.y + Math.sin(nd.phase) * 0.10,
-            nd.basePos.z + Math.sin(nd.phase * 1.3) * 0.06,
-          );
-          if (nd.aura) {
-            nd.aura.position.copy(nd.mesh.position);
-            nd.aura.scale.setScalar(1 + Math.sin(nd.phase * 2) * 0.12);
+        if (phase === 0) {
+          // Intro: rotate globe into position, then start drawing
+          if (phaseTimer > 1.8) { phase = 1; phaseTimer = 0; currentArc = 0; arcDrawT = 0; }
+
+        } else if (phase === 1) {
+          // Draw arcs sequentially
+          if (currentArc < arcDatas.length) {
+            arcDrawT += DT * 1.6;
+            const steps = Math.min(Math.floor(arcDrawT * N_ARC), N_ARC + 1);
+            arcDatas[currentArc].geo.setDrawRange(0, steps);
+            arcDatas[currentArc].mat.opacity = 0.82;
+
+            // Head dot follows tip of arc
+            if (arcDrawT < 1.0) {
+              const pt = arcDatas[currentArc].pts[Math.floor(arcDrawT * N_ARC)];
+              headDots[currentArc].mesh.position.copy(pt);
+              headDots[currentArc].mat.opacity = 0.95;
+            } else {
+              headDots[currentArc].mat.opacity = 0;
+              arcDrawT = 0;
+              currentArc++;
+            }
+          } else {
+            phase = 2; phaseTimer = 0;
           }
-        });
 
-        const attr = edgeGeo.getAttribute('position') as THREE.BufferAttribute;
-        for (let i = 0; i < edgeList.length; i++) {
-          const pa = nodes[edgeList[i].a].mesh.position;
-          const pb = nodes[edgeList[i].b].mesh.position;
-          attr.setXYZ(i * 2,     pa.x, pa.y, pa.z);
-          attr.setXYZ(i * 2 + 1, pb.x, pb.y, pb.z);
+        } else if (phase === 2) {
+          // Hold — all arcs visible
+          if (phaseTimer > 3.0) { phase = 3; phaseTimer = 0; }
+
+        } else if (phase === 3) {
+          // Fade out
+          const f = Math.max(0, 1 - phaseTimer / 1.5);
+          arcDatas.forEach(a => { a.mat.opacity = f * 0.82; });
+          headDots.forEach(h => { h.mat.opacity = 0; });
+          if (phaseTimer > 1.5) { phase = 4; phaseTimer = 0; }
+
+        } else if (phase === 4) {
+          // Brief gap, then restart
+          arcDatas.forEach(a => { a.mat.opacity = 0; a.geo.setDrawRange(0, 0); });
+          if (phaseTimer > 0.4) { phase = 1; phaseTimer = 0; currentArc = 0; arcDrawT = 0; }
         }
-        attr.needsUpdate = true;
 
-        pulses.forEach(p => {
-          p.progress += p.speed;
-          if (p.progress > 1) {
-            p.progress = 0;
-            p.edgeIdx = Math.floor(Math.random() * edgeList.length);
-          }
-          tmpA.copy(nodes[edgeList[p.edgeIdx].a].mesh.position);
-          tmpB.copy(nodes[edgeList[p.edgeIdx].b].mesh.position);
-          p.mesh.position.lerpVectors(tmpA, tmpB, p.progress);
-        });
-
+        // Mouse-responsive camera
         camera.position.x += (mouseRef.current.x * 2   - camera.position.x) * 0.02;
         camera.position.y += (mouseRef.current.y * 1.2 - camera.position.y) * 0.02;
         camera.lookAt(0, 0, 0);
@@ -280,15 +290,9 @@ export default function Hero() {
       loopRunning = true;
       animate();
 
-      // Pause the render loop entirely once Hero scrolls out of view -
-      // otherwise this WebGL scene keeps rendering at 60fps for the whole
-      // session, competing with scroll/compositing on lower-end devices.
       const io = new IntersectionObserver(([entry]) => {
         isVisible = entry.isIntersecting;
-        if (isVisible && !loopRunning) {
-          loopRunning = true;
-          animate();
-        }
+        if (isVisible && !loopRunning) { loopRunning = true; animate(); }
       }, { threshold: 0 });
       io.observe(canvas);
 
@@ -367,7 +371,7 @@ export default function Hero() {
           position: 'absolute',
           left: 0, top: 0, bottom: 0, width: '46%',
           zIndex: 3, pointerEvents: 'none',
-          background: 'linear-gradient(90deg, rgba(255,255,255,0.97) 45%, rgba(255,255,255,0.5) 75%, transparent 100%)',
+          background: 'linear-gradient(90deg, rgba(255,255,255,0.97) 45%, rgba(255,255,255,0.7) 75%, transparent 100%)',
         }} />
       )}
 

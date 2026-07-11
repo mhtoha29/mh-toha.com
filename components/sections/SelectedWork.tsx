@@ -37,7 +37,7 @@ export default function SelectedWork() {
         }}>
           <span className="label" style={{ marginBottom: '12px' }}>05 - Selected Work</span>
           <h2 className="display-lg" style={{ color: '#fff', marginBottom: '12px' }}>Projects that ship.</h2>
-          <p className="body-lg" style={{ color: 'rgba(255,255,255,0.5)' }}>
+          <p className="body-lg" style={{ color: 'rgba(255,255,255,0.7)' }}>
             Case studies with real results, not just screenshots.
           </p>
         </div>
@@ -55,7 +55,7 @@ export default function SelectedWork() {
                 border: '1px solid',
                 borderColor: filter === cat ? 'var(--sky)' : 'rgba(255,255,255,0.12)',
                 background: filter === cat ? 'rgba(14,165,233,0.15)' : 'transparent',
-                color: filter === cat ? 'var(--sky)' : 'rgba(255,255,255,0.5)',
+                color: filter === cat ? 'var(--sky)' : 'rgba(255,255,255,0.7)',
                 cursor: 'none', transition: 'all 0.25s',
               }}>
               {cat}
@@ -132,30 +132,30 @@ export default function SelectedWork() {
 
                 <span className="chip chip-sky" style={{ marginBottom: '12px' }}>{modal.category} · {modal.year}</span>
                 <h3 style={{ fontSize: '22px', fontWeight: 800, color: '#fff', marginBottom: '8px' }}>{modal.title}</h3>
-                <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)', marginBottom: '24px' }}>{modal.client}</p>
+                <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.7)', marginBottom: '24px' }}>{modal.client}</p>
 
                 {modal.challenge && (
                   <div style={{ marginBottom: '20px' }}>
                     <div style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '2px', color: 'var(--sky)', marginBottom: '8px', textTransform: 'uppercase' }}>Challenge</div>
-                    <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', lineHeight: 1.7 }}>{modal.challenge}</p>
+                    <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.88)', lineHeight: 1.7 }}>{modal.challenge}</p>
                   </div>
                 )}
                 {modal.approach && (
                   <div style={{ marginBottom: '20px' }}>
                     <div style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '2px', color: 'var(--cyan)', marginBottom: '8px', textTransform: 'uppercase' }}>Approach</div>
-                    <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', lineHeight: 1.7 }}>{modal.approach}</p>
+                    <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.88)', lineHeight: 1.7 }}>{modal.approach}</p>
                   </div>
                 )}
                 {modal.result && (
                   <div style={{ marginBottom: '24px' }}>
                     <div style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '2px', color: 'var(--emerald)', marginBottom: '8px', textTransform: 'uppercase' }}>Result</div>
-                    <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', lineHeight: 1.7 }}>{modal.result}</p>
+                    <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.88)', lineHeight: 1.7 }}>{modal.result}</p>
                   </div>
                 )}
                 {modal.metrics && (
                   <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '28px' }}>
                     {modal.metrics.map((m, i) => (
-                      <span key={i} className="chip chip-navy" style={{ color: 'rgba(255,255,255,0.7)', background: 'rgba(255,255,255,0.06)', borderColor: 'rgba(255,255,255,0.12)' }}>{m}</span>
+                      <span key={i} className="chip chip-navy" style={{ color: 'rgba(255,255,255,0.88)', background: 'rgba(255,255,255,0.06)', borderColor: 'rgba(255,255,255,0.12)' }}>{m}</span>
                     ))}
                   </div>
                 )}
@@ -292,7 +292,7 @@ function ProjectCard({ project, vis, i, onOpen }: { project: Project; vis: boole
       {/* Content */}
       <div style={{ padding: '24px' }}>
         <h3 style={{ fontSize: '18px', fontWeight: 700, color: '#fff', marginBottom: '8px' }}>{project.title}</h3>
-        <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)', marginBottom: '16px', lineHeight: 1.6 }}>{project.desc}</p>
+        <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.7)', marginBottom: '16px', lineHeight: 1.6 }}>{project.desc}</p>
 
         {/* Tech pills */}
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '20px' }}>
@@ -313,9 +313,9 @@ function ProjectCard({ project, vis, i, onOpen }: { project: Project; vis: boole
           {project.liveUrl !== '#' && (
             <a href={project.liveUrl} target="_blank" rel="noopener noreferrer"
               className="btn-outline"
-              style={{ padding: '10px 16px', fontSize: '12px', color: 'rgba(255,255,255,0.7)', borderColor: 'rgba(255,255,255,0.2)' }}
+              style={{ padding: '10px 16px', fontSize: '12px', color: 'rgba(255,255,255,0.88)', borderColor: 'rgba(255,255,255,0.2)' }}
               onMouseEnter={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.1)'; e.currentTarget.style.color = '#fff'; }}
-              onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = 'rgba(255,255,255,0.7)'; }}>
+              onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = 'rgba(255,255,255,0.88)'; }}>
               Live <ExternalLink size={12} />
             </a>
           )}

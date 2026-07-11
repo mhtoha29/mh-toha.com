@@ -290,7 +290,7 @@ export default function ChatWidget() {
                   boxShadow: '0 0 8px rgba(34,197,94,0.8)',
                 }}
               />
-              <span style={{ fontSize: '11.5px', color: 'rgba(255,255,255,0.5)', letterSpacing: '0.4px' }}>
+              <span style={{ fontSize: '11.5px', color: 'rgba(255,255,255,0.7)', letterSpacing: '0.4px' }}>
                 Online · Ask me anything
               </span>
             </div>
@@ -304,7 +304,7 @@ export default function ChatWidget() {
               borderRadius: '8px',
               border: 'none',
               background: 'rgba(255,255,255,0.06)',
-              color: 'rgba(255,255,255,0.6)',
+              color: 'rgba(255,255,255,0.78)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -394,7 +394,7 @@ export default function ChatWidget() {
                   fontWeight: 700,
                   letterSpacing: '1.5px',
                   textTransform: 'uppercase',
-                  color: 'rgba(255,255,255,0.35)',
+                  color: 'rgba(255,255,255,0.55)',
                   marginBottom: '2px',
                 }}
               >
@@ -528,7 +528,7 @@ export default function ChatWidget() {
         }
         .fab-ai-sheen {
           position: absolute; inset: -3px; border-radius: 50%;
-          background: conic-gradient(from 0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.55) 12%, rgba(255,255,255,0) 24%);
+          background: conic-gradient(from 0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.74) 12%, rgba(255,255,255,0) 24%);
           animation: fabSheenSpin 3.2s linear infinite;
           pointer-events: none;
         }
@@ -547,7 +547,7 @@ export default function ChatWidget() {
         }
         .chat-dot {
           width: 7px; height: 7px; border-radius: 50%;
-          background: rgba(255,255,255,0.55);
+          background: rgba(255,255,255,0.74);
           animation: chatDotBounce 1.1s ease-in-out infinite;
         }
         @keyframes chatDotBounce {

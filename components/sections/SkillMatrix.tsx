@@ -299,7 +299,7 @@ export default function SkillMatrix() {
             }}>Globally.</span>
           </h2>
           <p style={{
-            fontSize: '14px', color: 'rgba(255,255,255,0.45)',
+            fontSize: '14px', color: 'rgba(255,255,255,0.66)',
             maxWidth: '440px', margin: '0 auto', lineHeight: 1.75,
           }}>
             Delivering digital solutions from Dhaka to clients across the globe -

@@ -220,10 +220,10 @@ export default function Navigation() {
             <span style={{ fontSize: '12px', fontWeight: 600, color: '#34D399', letterSpacing: '0.5px' }}>Open for projects</span>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-            <a href="mailto:connect.mhtoha@gmail.com" style={{ fontSize: '13px', color: 'rgba(255,255,255,0.6)', textDecoration: 'none' }}>
+            <a href="mailto:connect.mhtoha@gmail.com" style={{ fontSize: '13px', color: 'rgba(255,255,255,0.78)', textDecoration: 'none' }}>
               connect.mhtoha@gmail.com
             </a>
-            <a href="tel:+8801716102136" style={{ fontSize: '13px', color: 'rgba(255,255,255,0.6)', textDecoration: 'none' }}>
+            <a href="tel:+8801716102136" style={{ fontSize: '13px', color: 'rgba(255,255,255,0.78)', textDecoration: 'none' }}>
               +880 1716-102136
             </a>
           </div>

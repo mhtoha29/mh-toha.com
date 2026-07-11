@@ -24,7 +24,7 @@ const CONTACT_PARTICLES = [
   { left: '61%', size: 3.5, color: 'rgba(52,211,153,0.55)', dur: 20, delay: 2 },
   { left: '74%', size: 4,   color: 'rgba(129,140,248,0.6)', dur: 15, delay: 8 },
   { left: '88%', size: 3,   color: 'rgba(56,189,248,0.6)',  dur: 19, delay: 4 },
-  { left: '52%', size: 2.5, color: 'rgba(255,255,255,0.5)', dur: 22, delay: 10 },
+  { left: '52%', size: 2.5, color: 'rgba(255,255,255,0.7)', dur: 22, delay: 10 },
 ];
 
 export default function Contact() {
@@ -155,7 +155,7 @@ export default function Contact() {
 
           <span className="label" style={{ marginBottom: '12px', display: 'block' }}>09 - Contact</span>
           <h2 className="display-lg" style={{ color: '#fff', marginBottom: '12px' }}>Let&apos;s build something great.</h2>
-          <p className="body-lg" style={{ color: 'rgba(255,255,255,0.5)' }}>
+          <p className="body-lg" style={{ color: 'rgba(255,255,255,0.7)' }}>
             Based in Dhaka, Bangladesh - available globally.
           </p>
         </div>
@@ -169,7 +169,7 @@ export default function Contact() {
           }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '28px' }}>
               <Clock size={14} style={{ color: 'var(--muted)' }} />
-              <span style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)' }}>Usually responds within 24 hours · GMT+6 Dhaka</span>
+              <span style={{ fontSize: '13px', color: 'rgba(255,255,255,0.7)' }}>Usually responds within 24 hours · GMT+6 Dhaka</span>
             </div>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '36px' }}>

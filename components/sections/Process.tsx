@@ -204,7 +204,7 @@ export default function Process() {
                 background: 'linear-gradient(0deg, rgba(0,0,0,0.8), transparent)',
               }}>
                 <div style={{ fontSize: '13px', fontWeight: 600, color: '#fff' }}>{VIDEOS[vid.idx].title}</div>
-                <div style={{ fontSize: '11.5px', color: 'rgba(255,255,255,0.5)', marginTop: '2px' }}>Click to play</div>
+                <div style={{ fontSize: '11.5px', color: 'rgba(255,255,255,0.7)', marginTop: '2px' }}>Click to play</div>
               </div>
             </div>
 

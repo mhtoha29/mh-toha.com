@@ -35,7 +35,7 @@ const FOOTER_PARTICLES = [
   { left: '35%', size: 3,   color: 'rgba(129,140,248,0.55)', dur: 20, delay: 5 },
   { left: '58%', size: 4,   color: 'rgba(56,189,248,0.55)',  dur: 18, delay: 2 },
   { left: '78%', size: 3,   color: 'rgba(129,140,248,0.5)',  dur: 22, delay: 8 },
-  { left: '90%', size: 2.5, color: 'rgba(255,255,255,0.45)', dur: 24, delay: 11 },
+  { left: '90%', size: 2.5, color: 'rgba(255,255,255,0.66)', dur: 24, delay: 11 },
 ];
 
 export default function Footer() {
@@ -97,7 +97,7 @@ export default function Footer() {
             lineHeight: 0.95,
             letterSpacing: '-0.03em',
             color: 'transparent',
-            WebkitTextStroke: '1.5px rgba(255,255,255,0.35)',
+            WebkitTextStroke: '1.5px rgba(255,255,255,0.55)',
             transition: 'all 0.5s ease',
             whiteSpace: 'nowrap',
           }}>
@@ -140,7 +140,7 @@ export default function Footer() {
             <div style={{ marginBottom: '14px' }}>
               <Logo variant="white" height={22} />
             </div>
-            <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.4)', lineHeight: 1.7, maxWidth: '220px' }}>
+            <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.62)', lineHeight: 1.7, maxWidth: '220px' }}>
               Engineering. Design. Code.<br />Dhaka, Bangladesh.
             </p>
           </div>
@@ -151,9 +151,9 @@ export default function Footer() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
               {LINKS.map(l => (
                 <a key={l.href} href={l.href} target={l.external ? '_blank' : undefined} rel="noopener noreferrer"
-                  style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)', textDecoration: 'none', transition: 'color 0.2s' }}
+                  style={{ fontSize: '13px', color: 'rgba(255,255,255,0.7)', textDecoration: 'none', transition: 'color 0.2s' }}
                   onMouseEnter={e => (e.currentTarget.style.color = 'var(--sky)')}
-                  onMouseLeave={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.5)')}>
+                  onMouseLeave={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.7)')}>
                   {l.label}
                 </a>
               ))}
@@ -164,13 +164,13 @@ export default function Footer() {
           <div>
             <div style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '2px', color: 'var(--sky)', textTransform: 'uppercase', marginBottom: '16px' }}>Connect</div>
             <a href="mailto:connect.mhtoha@gmail.com"
-              style={{ display: 'block', fontSize: '13px', color: 'rgba(255,255,255,0.7)', textDecoration: 'none', marginBottom: '8px', transition: 'color 0.2s' }}
+              style={{ display: 'block', fontSize: '13px', color: 'rgba(255,255,255,0.88)', textDecoration: 'none', marginBottom: '8px', transition: 'color 0.2s' }}
               onMouseEnter={e => (e.currentTarget.style.color = '#fff')}
-              onMouseLeave={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.7)')}>
+              onMouseLeave={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.88)')}>
               connect.mhtoha@gmail.com
             </a>
             <a href="tel:+8801716102136"
-              style={{ display: 'block', fontSize: '13px', color: 'rgba(255,255,255,0.5)', textDecoration: 'none', marginBottom: '20px' }}>
+              style={{ display: 'block', fontSize: '13px', color: 'rgba(255,255,255,0.7)', textDecoration: 'none', marginBottom: '20px' }}>
               +8801716102136
             </a>
             <div style={{ display: 'flex', gap: '12px' }}>
@@ -180,7 +180,7 @@ export default function Footer() {
                     width: '36px', height: '36px', borderRadius: '8px',
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
                     border: '1px solid rgba(255,255,255,0.1)',
-                    color: 'rgba(255,255,255,0.5)',
+                    color: 'rgba(255,255,255,0.7)',
                     textDecoration: 'none',
                     transition: 'all 0.25s',
                   }}
@@ -192,7 +192,7 @@ export default function Footer() {
                   onMouseLeave={e => {
                     e.currentTarget.style.background = 'transparent';
                     e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)';
-                    e.currentTarget.style.color = 'rgba(255,255,255,0.5)';
+                    e.currentTarget.style.color = 'rgba(255,255,255,0.7)';
                   }}>
                   {s.icon}
                 </a>
@@ -207,7 +207,7 @@ export default function Footer() {
 
         {/* Bottom */}
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-          <span style={{ fontSize: '12px', color: 'rgba(255,255,255,0.55)', letterSpacing: '0.3px' }}>
+          <span style={{ fontSize: '12px', color: 'rgba(255,255,255,0.74)', letterSpacing: '0.3px' }}>
             © 2025 Mahmudul Hasan Toha · MH-TOHA
           </span>
         </div>
